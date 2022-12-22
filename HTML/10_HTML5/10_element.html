@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+  <!-- 01. 開始標籤到結束標籤 -> 元素 -->
+
+  <h1>Hello, world</h1>
+
+  <!-- 02. 元素的屬性 -->
+  <h1 id="content">Hello, world</h1>
+  <!-- <div style="width: 100vw; display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 1rem; row-gap: 1rem; margin: 2rem 1rem;">
+    <img src="https://picsum.photos/id/23/800/600" alt="" width="100%">
+    <img src="https://picsum.photos/id/24/800/600" alt="" width="100%">
+    <img src="https://picsum.photos/id/25/800/600" alt="" width="100%">
+    <img src="https://picsum.photos/id/26/800/600" alt="" width="100%">
+    
+  </div> -->
+  <!-- id 的屬性值:
+      1. 有區分大小寫
+      2. 至少包含一個字元
+      3. 不能以數字開頭
+      4. 不能包含空格 -->
+
+
+  <!-- 02-01. 不同元素可能有不同屬性。 ex: <a> -->
+    <a href="https://google.com" target="_blank">Google</a>
+    
+    
+    <!-- 02-02. 元素可以有多個屬性。 ex: <a> -->
+    <a id="google" href="https://www.google.com" target="_blank">Google</a>
+
+
+  <!-- 試試看，是否能達到效果 -->
+  <!-- K.P.: 元素使用不支援的屬性，則無效果 -->
+  <!-- <h1 href="https://www.google.com">test</h1> -->
+
+
+  <!-- 02-03. JS相關屬性 -->
+  <button onclick="showMst()">click me</button>
+  <script>
+    function showMst(){
+      alert('Hello');
+    }
+  </script>
+
+</body>
+
+</html>
