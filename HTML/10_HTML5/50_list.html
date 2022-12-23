@@ -2,50 +2,62 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
 </head>
 
 <body>
-    <!-- <ul>：unordered list，無排序的項目 -->
-    <!-- list-style-type: disc; -->
-    <!-- 全台各地飲料店名稱：
-    WHO'S TEA 鬍子茶
-    布萊恩紅茶
-    拾覺細做輕飲
-    迷客夏
-    良辰吉時
-    小確幸紅茶牛奶合作社 -->
+  <!-- <ul>：unordered list，無排序的項目 -->
+  <!-- list-style-type: disc; -->
+  <h3>全台各地飲料店名稱：</h3>
+  <ul style="list-style:'\1F56A';">
+    <li style="color: red;">WHO'S TEA 鬍子茶</li>
+    <li style="color: orange;">布萊恩紅茶</li>
+    <li style="color: yellow;">拾覺細做輕飲</li>
+    <li style="color: green;">迷客夏</li>
+    <li style="color: blue;">良辰吉時</li>
+    <li style="color: rgb(77, 0, 128);">小確幸紅茶牛奶合作社</li>
+  </ul>
 
-    <!-- 試試看，如果想要改變項目符號的圖示，要幫<ul>設定哪一項屬性? 有哪幾種圖示? -->
-    <!-- list-style-type:circle -->
-    <!-- list-style-type:square -->
-    <!-- list-style-type:none -->
+  <!-- 試試看，如果想要改變項目符號的圖示，要幫<ul>設定哪一項屬性? 有哪幾種圖示? -->
+  <!-- list-style-type:circle -->
+  <!-- list-style-type:square -->
+  <!-- list-style-type:none -->
 
-    <!-- ol：ordered list，排序的項目 -->
-    <!-- 每日上課守則：
-    預習
-    練習
-    複習 -->
-
-    <!-- 試試看，能不能改變<ol>清單編號類型? 從123改成ABC或者其他? (type="A")
+  <!-- ol：ordered list，排序的項目 -->
+  <h3>每日上課守則：</h3>
+  <ol>
+    <li>預習</li>
+    <li>練習</li>
+    <li>複習</li>
+  </ol> 
+  <hr>
+  <ol type="A" start="26" reversed>
+    <li>預習</li>
+    <li>練習</li>
+    <li>複習</li>
+  </ol> 
+  <!-- 試試看，能不能改變<ol>清單編號類型? 從123改成ABC或者其他? (type="A")
                 只能從1號開始編嗎? (start="5" reversed) -->
-    
 
+  <hr>
+  <!-- dl：description list -->
+  <!-- dt：description list term -->
+  <!-- dd：description descriptions -->
+  <h3>這一堂課會學習到：</h3>
+  <dl>
+    <dt>HTML</dt>
+    <dd>HTML的全名是HyperText Markup Language，編寫網頁的語言，可以配合 https://www.w3schools.com/ 查看和練習</dd>
 
-    <!-- dl：description list -->
-    <!-- dt：description list term -->
-    <!-- dd：description descriptions -->
-    <!-- 這一堂課會學習到：
-    HTML
-    HTML的全名是HyperText Markup Language，編寫網頁的語言
-    可以配合 https://www.w3schools.com/ 查看和練習
-    CSS
-    CSS 的全名為Cascading Style Sheets，是一種樣式表(Stylesheet) 語言
-    JavaScript
-    通常縮寫為JS，一種程式語言，能夠使網頁動態更新內容、控制多媒體，處理網頁前端的邏輯判斷等等
-    jQuery
-    是一個函式庫 -->
+    <dt>CSS</dt>
+    <dd>CSS 的全名為Cascading Style Sheets，是一種樣式表(Stylesheet) 語言</dd>
+
+    <dt>JavaScript</dt>
+    <dd>通常縮寫為JS，一種程式語言，能夠使網頁動態更新內容、控制多媒體，處理網頁前端的邏輯判斷等等</dd>
     
+    <dt>jQuery</dt>
+    <dd>是一個函式庫</dd>
+  </dl>
+
 </body>
 
 </html>

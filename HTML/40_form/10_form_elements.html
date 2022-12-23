@@ -7,13 +7,57 @@
 
 <body>
     <!-- 試試看，<select>、<option> -->
-    
-        
+    <form action="get">
+        <label for="edu">學歷</label>
+        <select name="edu" id="">
+            <option value="國小">國小</option>
+            <option value="國中">國中</option>
+            <option value="高中">高中</option>
+            <option value="大學">大學</option>
+            <option value="研究所">研究所</option>
+        </select>
+    </form>
+
     <!-- 試試看，<select>、<optgroup>、<option> -->
-    
+    <form action="get">
+        <label for="fruit">喜愛水果</label>
+        <select name="fruit" id="">
+            <optgroup label="群組1">
+                <option value="banana">香蕉</option>
+                <option value="apple">蘋果</option>
+                <option value="pinapple">鳳梨</option>
+                <option value="watermelon">西瓜</option>
+                <option value="dungon">龍眼</option>
+            </optgroup>
+            <optgroup label="群組2">
+                <option value="banana">香蕉</option>
+                <option value="apple">蘋果</option>
+                <option value="pinapple">鳳梨</option>
+                <option value="watermelon">西瓜</option>
+                <option value="dungon">龍眼</option>
+            </optgroup>
+        </select>
+    </form>
 
     <!-- 試試看，<datalist>、<option> -->
-    
+    <label for="choice">遊戲</label>
+    <input list="game" id="choice">
+    <datalist id="game">
+        <option value="">戰棋</option>
+        <option value="">英雄聯盟</option>
+        <option value="">擦玻璃大賽</option>
+    </datalist>
+
+    <label for="ice-cream-choice">Choose a flavor:</label>
+    <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice">
+
+    <datalist id="ice-cream-flavors">
+        <option value="Chocolate">
+        <option value="Coconut">
+        <option value="Mint">
+        <option value="Strawberry">
+        <option value="Vanilla">
+    </datalist>
 </body>
 
 </html>
