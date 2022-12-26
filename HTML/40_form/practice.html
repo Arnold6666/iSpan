@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>通勤工具使用調查</h3>
+    <form action="survey.php">
+        <fieldset>
+            <legend>基本資料</legend>
+            <label for="userName">姓名：</label>
+            <input type="text" id="userName">
+            <br>
+            <label for="userPhone">電話：</label>
+            <input type="tel" id="userName">
+        </fieldset>
+
+        職業：
+        <input type="radio" name="job" id="stu">
+        <label for="stu">學生</label>
+        <input type="radio" name="job" id="tea">
+        <label for="tea">老師</label>
+        <input type="radio" name="job" id="othJ">
+        <label for="othJ">其他</label>
+        <br>
+        
+        年紀：
+        <input type="radio" name="age" id="one">
+        <label for="one">20-30</label>
+        <input type="radio" name="age" id="two">
+        <label for="two">30-40</label>
+        <input type="radio" name="age" id="three">
+        <label for="three">40-50</label>
+        <input type="radio" name="age" id="four">
+        <label for="four">50以上</label>      
+        
+        <br>
+        交通工具：
+        <input type="radio" name="pt" id="bicycle">
+        <label for="bicycle">腳踏車</label>
+        <input type="radio" name="pt" id="scooter">
+        <label for="scooter">機車</label>
+        <input type="radio" name="pt" id="ship">
+        <label for="ship">船</label>
+        <input type="radio" name="pt" id="otherW">
+        <label for="otherW">其他</label>    
+        
+        <div style="height: 500px;">
+            <img src="../10_HTML5/img/kitty.jpg" alt="" height="50%">
+        </div>
+    </form>
+</body>
+</html>

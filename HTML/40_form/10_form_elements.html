@@ -2,62 +2,76 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
 </head>
 
 <body>
-    <!-- 試試看，<select>、<option> -->
-    <form action="get">
-        <label for="edu">學歷</label>
-        <select name="edu" id="">
-            <option value="國小">國小</option>
-            <option value="國中">國中</option>
-            <option value="高中">高中</option>
-            <option value="大學">大學</option>
-            <option value="研究所">研究所</option>
-        </select>
-    </form>
+  <!-- 試試看，<select>、<option> -->
 
-    <!-- 試試看，<select>、<optgroup>、<option> -->
-    <form action="get">
-        <label for="fruit">喜愛水果</label>
-        <select name="fruit" id="">
-            <optgroup label="群組1">
-                <option value="banana">香蕉</option>
-                <option value="apple">蘋果</option>
-                <option value="pinapple">鳳梨</option>
-                <option value="watermelon">西瓜</option>
-                <option value="dungon">龍眼</option>
-            </optgroup>
-            <optgroup label="群組2">
-                <option value="banana">香蕉</option>
-                <option value="apple">蘋果</option>
-                <option value="pinapple">鳳梨</option>
-                <option value="watermelon">西瓜</option>
-                <option value="dungon">龍眼</option>
-            </optgroup>
-        </select>
-    </form>
+  <label for="edu">學歷</label>
+  <select name="edu" id="edu">
+    <option value="國小">國小</option>
+    <option value="國中">國中</option>
+    <option value="高中">高中</option>
+    <option value="大學">大學</option>
+    <option value="研究所">研究所</option>
+  </select>
 
-    <!-- 試試看，<datalist>、<option> -->
-    <label for="choice">遊戲</label>
-    <input list="game" id="choice">
-    <datalist id="game">
-        <option value="">戰棋</option>
-        <option value="">英雄聯盟</option>
-        <option value="">擦玻璃大賽</option>
+
+  <!-- 試試看，<select>、<optgroup>、<option> -->
+  <form action="get">
+    <label for="fruit">喜愛水果</label>
+    <select name="fruit" id="">
+      <optgroup label="群組1">
+        <option value="banana">香蕉</option>
+        <option value="apple">蘋果</option>
+        <option value="pinapple">鳳梨</option>
+        <option value="watermelon">西瓜</option>
+        <option value="dungon">龍眼</option>
+      </optgroup>
+      <optgroup label="群組2">
+        <option value="banana">香蕉</option>
+        <option value="apple">蘋果</option>
+        <option value="pinapple">鳳梨</option>
+        <option value="watermelon">西瓜</option>
+        <option value="dungon">龍眼</option>
+      </optgroup>
+    </select>
+  </form>
+
+  <!-- 試試看，<datalist>、<option> -->
+
+
+  <select name="" id="">
+    <label for="game">遊戲</label>
+    <!-- <input list="game" id="choice" name="choice">  -->
+    <datalist id="game" name="game">
+      <option value="SLG"></option>
+      <option value="LOL"></option>
+      <option value="GLASS"></option>
     </datalist>
+  </select>
 
-    <label for="ice-cream-choice">Choose a flavor:</label>
-    <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice">
+  <br>
+  <label for="choice">遊戲</label>
+  <input list="game" id="choice" name="choice"> <!-- 透過list屬性與 datalist 的id綁定-->
+  <datalist id="game" >
+    <option value="SLG">
+    <option value="LOL">
+    <option value="GLASS">
+  </datalist>
 
-    <datalist id="ice-cream-flavors">
-        <option value="Chocolate">
-        <option value="Coconut">
-        <option value="Mint">
-        <option value="Strawberry">
-        <option value="Vanilla">
-    </datalist>
+  <br>
+
+  <label for="ice-cream-choice">Choose a flavor:</label>
+  <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice">
+  <datalist id="ice-cream-flavors">
+    <option value="Chocolate">
+    <option value="Coconut">
+    <option value="Mint">
+    <option value="Strawberry">
+    <option value="Vanilla">
+  </datalist>
 </body>
 
 </html>

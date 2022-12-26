@@ -2,31 +2,73 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
 </head>
 
 <body>
-    <!-- 參照 20_form_input_types_完成圖.png 製作一份表單 -->
+  <!-- 參照 20_form_input_types_完成圖.png 製作一份表單 -->
 
-    <!-- step1: 標題 -->
-    <!-- step2: 加入一個表單 <form> -->
-    <!-- step3. 在 <form> 表單內 加入 用餐地點 / 時段 / 人數 <fieldset> 群組標籤 和 <legend> 並給予說明 -->
+  <!-- step1: 標題 -->
+  <!-- step2: 加入一個表單 <form> -->
+  <!-- step3. 在 <form> 表單內 加入 用餐地點 / 時段 / 人數 <fieldset> 群組標籤 和 <legend> 並給予說明 -->
 
-    <!-- step4. 在表單 <form> 內加入 用餐地點 和 <input type="radio"> -->
-    <!--     id：識別某個HTML文件上的元素 -->
-    <!--   name：做為radio、checkbox的分組 ; 讓伺服器識別 -->
+  <!-- step4. 在表單 <form> 內加入 用餐地點 和 <input type="radio"> -->
+  <!--     id：識別某個HTML文件上的元素 -->
+  <!--   name：做為radio、checkbox的分組 ; 讓伺服器識別 -->
 
-    <!-- step5. 在表單 <form> 內加入 用餐時段 和 <input type="date">
+  <!-- step5. 在表單 <form> 內加入 用餐時段 和 <input type="date">
                 和 時間選單 <select> -->
 
-    <!-- step6. 在表單 <form> 內加入 訂位人數 <label> 和 <input type="number" min="1" max="20" value="1"> -->
-    <!--   min: 下限值 -->
-    <!--   max: 上限值 -->
-    <!-- value: 預設值 -->
+  <!-- step6. 在表單 <form> 內加入 訂位人數 <label> 和 <input type="number" min="1" max="20" value="1"> -->
+  <!--   min: 下限值 -->
+  <!--   max: 上限值 -->
+  <!-- value: 預設值 -->
 
-    <!-- step7. 在 <form> 表單內 加入 訂位資訊 <fieldset> 群組標籤 和 <legend> 並給予說明 -->
-    <!-- step8. 在表單 <form> 內加入 姓名 <label> 和輸入欄位 <input type="text"> -->
-    <!-- step9. 在表單 <form> 內加入 電話 <label> 和輸入欄位 <input type="tel"> -->
+  <!-- step7. 在 <form> 表單內 加入 訂位資訊 <fieldset> 群組標籤 和 <legend> 並給予說明 -->
+  <!-- step8. 在表單 <form> 內加入 姓名 <label> 和輸入欄位 <input type="text"> -->
+  <!-- step9. 在表單 <form> 內加入 電話 <label> 和輸入欄位 <input type="tel"> -->
+  
+  <form action="">
+    <h3>海上餐廳 - 線上訂位</h3>
+    <fieldset>
+      <legend>用餐地點 / 時段 / 人數</legend>
+      用餐地點：
+      <input type="radio" value="one" id="one" name="location"><label for="one"> 淡水店</label>
+      <input type="radio" value="two" id="two" name="location"><label for="two"> 淡水店</label>
+      <input type="radio" value="three" id="three" name="location"><label for="three"> 淡水店</label>
+      <br>
+      用餐時段：
+      <input type="date" id="date"> 
+      <!-- <input type="time" id="time"> -->
+      <select name="time" id="time">
+        <option value="10:00">10:00</option>
+        <option value="11:00">11:00</option>
+        <option value="12:00" selected>12:00</option>
+        <option value="13:00">13:00</option>
+        <option value="14:00">14:00</option>
+        <option value="16:00">16:00</option>
+        <option value="17:00">17:00</option>
+        <option value="18:00">18:00</option>
+        <option value="19:00">19:00</option>
+        <option value="20:00">20:00</option>
+        <option value="21:00">21:00</option>
+        <option value="22:00">22:00</option>
+      </select>
+      <br>
+      用餐人數(上限20人)：
+      <input type="number" max="20" min="1" value="1">人
+    </fieldset>
+    <br>
+    <fieldset>
+      <legend>訂位資訊</legend>
+      <label for="name">姓名：</label>
+      <input type="text" id="name" placeholder="請輸入姓名">
+      <br>
+      <label for="tel">電話：</label>
+      <input type="tel" id="tel" placeholder="請輸入電話">
+    </fieldset>
+    
+  </form>
 
 </body>
 

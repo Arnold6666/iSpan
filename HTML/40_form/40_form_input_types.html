@@ -2,22 +2,54 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
 </head>
 
 <body>
-    <!-- 參照 40_form_input_types_完成圖.png 製作一份表單 -->
+  <!-- 參照 40_form_input_types_完成圖.png 製作一份表單 -->
 
-    <!-- step1: 標題 -->
-    <!-- step2: 加入一個表單 <form> -->
-    <!-- step3. 在<form>表單內 加入 <fieldset> 群組標籤 和 <legend> 並給予說明 -->
-    <!-- step4. 在表單 <form> 內加入 姓名 <label> 和輸入欄位 <input type="text"> -->
-    <!-- step5. 在表單 <form> 內加入 電話 <label> 和輸入欄位 <input type="tel"> -->    
-    <!-- step6. 加入 職業 和 <input type="radio"> -->
+  <!-- step1: 標題 -->
+  <!-- step2: 加入一個表單 <form> -->
+  <!-- step3. 在<form>表單內 加入 <fieldset> 群組標籤 和 <legend> 並給予說明 -->
+  <!-- step4. 在表單 <form> 內加入 姓名 <label> 和輸入欄位 <input type="text"> -->
+  <!-- step5. 在表單 <form> 內加入 電話 <label> 和輸入欄位 <input type="tel"> -->
+  <!-- step6. 加入 職業 和 <input type="radio"> -->
 
-    <!-- step7. 加入 年紀 和 <input type="radio">、 
+  <!-- step7. 加入 年紀 和 <input type="radio">、 
                     交通工具 和 <input type="checkbox"> ，步驟和 step6. 類似 -->
-    
+                    
+  <h3>通勤工具使用調查</h3>
+  <form action="">
+    <fieldset>
+      <legend>基本資料</legend>
+      <label for="name">姓名：</label><input type="text" id="name" required>
+      <br>
+      <label for="tel">電話：</label><input type="number" id="tel" required>
+    </fieldset>
+
+    職業：
+    <input type="radio" value="student" name="job" id="student"><label for="student">學生</label>
+    <input type="radio" value="teacher" name="job" id="teacher"><label for="teacher">老師</label>
+    <input type="radio" value="other" name="job" id="other"><label for="other">其他</label>
+    <br>
+
+    年紀：
+    <input type="radio" value="20-30" name="years" id="20-30"><label for="20-30">20-30</label>
+    <input type="radio" value="30-40" name="years" id="30-40"><label for="30-40">30-40</label>
+    <input type="radio" value="40-50" name="years" id="40-50"><label for="40-50">40-50</label>
+    <input type="radio" value="50up" name="years" id="50up"><label for="50up">50以上</label>
+    <br>
+
+    交通工具：
+    <input type="checkbox" name="bicycle" id="bicycle">
+    <label for="bicycle">腳踏車</label>
+    <input type="checkbox" name="scooter" id="scooter">
+    <label for="scooter">機車</label>
+    <input type="checkbox" name="ship" id="ship">
+    <label for="ship">船</label>
+    <input type="checkbox" name="other" id="others">
+    <label for="others">其他</label>
+  </form>
 
 </body>
 
