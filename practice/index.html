@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+    integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <title>Hot 7</title>
+</head>
+
+<body>
+  <header>
+    <nav class="header-nav">
+      <div class="l-h">
+        <button><i class='bx bx-menu'></i></button>
+      </div>
+      <div class="logo">
+        <img src="images/hot7-logo.svg" alt="">
+      </div>
+      <div class="r-h">
+        <a href="#">鐵板料理</a>
+        <a href="#">分店資訊</a>
+        <a href="#">外帶自取</a>
+      </div>
+    </nav>
+  </header>
+
+  <section id="carousel" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="img-container carousel-item active">
+        <img src="images/PC.jpg" alt="">
+      </div>
+      <div class="img-container carousel-item">
+        <img src="images/220401_start-1.webp" alt="">
+      </div>
+      <div class="img-container carousel-item">
+        <img src="images/220401_fans-2.webp" alt="">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </section>
+
+  <section id="marquee">
+    <marquee scrollamout="12" onmouseout="this.start();" onmouseover="this.stop()">
+      <ul>
+        <li>即日起~2022/12/31，平日週一/連續假期後的首一開工日/補班日，至全台hot 7門市消費任乙客套餐，並出示或現場加入hot 7 LINE官方帳號，即招待「美味開工禮」乙份</li>
+        <li>即日起~2022/12/27，每月7號、17號、27號，至全台hot 7門市消費任乙客套餐，鐵粉憑此活動兌換券/還不是鐵粉的朋友現場加入hot 7LINE官方帳號均可兌換「指定餐點」乙份。</li>
+      </ul>
+    </marquee>
+  </section>
+
+  <section id="activity">
+    <div class="owl-container">
+      <div class="title">
+        <h1><img src="images/title-accent.svg" alt="">鐵定好康</h1>
+      </div>
+
+      <div class="activity-carousel owl-carousel owl-theme">
+        <figure class="item">
+          <img src="images/220401_fans-1.webp" alt="">
+          <figcaption>
+            <h3>新粉限定｜逢7來加菜</h3>
+            <p class="deadline"> - 2022/12/27 </p>
+            <p>活動期間，每月7、17、27號，消費任乙客套餐，並現場加入hot 7 LINE官方帳號，即贈「指定餐點」乙份。</p>
+          </figcaption>
+        </figure>
+
+        <figure class="item">
+          <img src="images/11512.webp" alt="">
+          <figcaption>
+            <h3>公告｜台中大里大買家店暫停營業</h3>
+            <p>因租約到期，台中大里大買家店將營業至2022/11/13(日)為止；11/14(一)起將暫停營業，歡迎前往台中大魯閣新時代店，竭誠的期待能為您服務。</p>
+          </figcaption>
+        </figure>
+
+        <figure class="item">
+          <img src="images/2202_wait.webp" alt="">
+          <figcaption>
+            <h3> 等一個人｜用心 讓安心不變</h3>
+            <p>當一間餐廳有這樣一位客人總是坐一樣的位子，用一樣的餐點他到底為何而來？又帶著什麼樣的故事呢？</p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="more">
+    <button><a href="#">更多好康</a></button>
+  </section>
+
+  <section id="intro">
+    <div class="redbar"></div>
+    <div class="leftgreen">
+      <span class="menu">MENU</span>
+      <span class="teppanyaki">鐵板料理</span>
+    </div>
+    <div class="tep-des">
+      <h2>鐵板燒的主角 原塊牛肉</h2>
+      <p>堅持使用原塊牛肉，高溫鐵板現點現做，香煎原味呈現，一口咬下滿口肉汁，香氣四溢。</p>
+    </div>
+    <div class="tep-pic1">
+      <img src="images/sample-1.jpg" alt="" class="pic1">
+    </div>
+    <div class="tep-pic2">
+      <div class="pic2-desc">
+        <h2>鐵板燒的靈魂 現炒時蔬</h2>
+        <p>新鮮應時的季節蔬菜，高溫鐵板現炒鎖住香甜；一口吃進蔬菜香甜爽脆，是鐵板燒料理當中的靈魂角色。</p>
+      </div>
+      <img src="images/sample-2.jpg" alt="" class="pic2">
+    </div>
+    <div class="tep-pic3">
+      <img src="images/sample-3.webp" alt="" class="pic3">
+      <div class="pic3-desc">
+        <h2>頂級職人手藝 鐵板料理</h2>
+        <p>每道料理均由鐵板職人精心製作，每一份套餐都注入滿滿職人精神，期待每一口都能帶來超乎期待的幸福。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="moredish">
+    <button><a href="#">更多菜色</a></button>
+  </section>
+
+  <footer>
+    <div class="footer-logo"><img src="images/hot7-logo.svg" alt=""></div>
+    <nav class="footer-nav">
+      <li><a href="#">隱私權政策</a></li>
+      <li><a href="#">聯絡我們</a></li>
+      <li><a href="#">禮卷查詢</a></li>
+      <li><a href="#">人才招募</a></li>
+      <li><a href="#">集團品牌</a></li>
+    </nav>
+    <div class="link">
+      <a href="https://www.facebook.com/hot7.tw/" target="_blank">
+        <svg width="40" height="40" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0)">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M60 29.8413C60 46.4116 46.5703 59.8413 30 59.8413C13.4297 59.8413 0 46.4116 0 29.8413C0 13.271 13.4297 -0.158691 30 -0.158691C46.5703 -0.158691 60 13.271 60 29.8413ZM32.1797 31.0133H37.5352L38.2383 24.1227H32.1797V20.068C32.1797 18.5446 33.1875 18.193 33.9023 18.193H38.2617V11.5016L32.25 11.4782C25.582 11.4782 24.0703 16.4704 24.0703 19.6579V24.1227H20.2148V31.0133H24.0703V50.6305H32.1797V31.0133Z"
+              fill="white"></path>
+          </g>
+          <defs>
+            <clipPath id="clip0">
+              <rect width="60" height="60" fill="white"></rect>
+            </clipPath>
+          </defs>
+        </svg>
+      </a>
+      <a href="https://wowfoods.cc/hot7" target="_blank">
+
+        <svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40" viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
+      <style type="text/css">
+        .st0{fill:#DF032E;}
+        .st1{opacity:0.2;fill:#221714;}
+        .st2{fill:#FFFFFF;}
+      </style>
+      <g>
+        <circle class="st0" cx="29.9" cy="30.1" r="29.9"></circle>
+        <g>
+          <path class="st1" d="M59.8,30.1c0-4.3-0.9-8.3-2.5-12L18,57.5c3.7,1.6,7.7,2.5,12,2.5C46.4,60,59.8,46.6,59.8,30.1z"></path>
+        </g>
+        <g>
+          <g>
+            <path class="st2" d="M27.3,24.7c-0.1-0.1-0.2-0.1-0.3,0l-0.5,0.7c-0.1,0.1-0.2,0.1-0.3,0.1h-0.8h-2.3v-4.9H27
+              c0.1,0,0.2,0,0.2-0.1c0-0.1,0-0.1,0-0.2c-0.4-0.5-0.8-1-1.4-1.3c-0.1-0.1-0.2-0.1-0.3,0L25,19.7c-0.1,0.1-0.2,0.1-0.3,0.1h-0.5
+              h-1v-4.4h4.5c0.1,0,0.2,0,0.2-0.1c0-0.1,0-0.1-0.1-0.2c-0.4-0.5-0.8-1-1.4-1.3c-0.1-0.1-0.2-0.1-0.3,0l-0.5,0.7
+              c-0.1,0.1-0.2,0.1-0.3,0.1h-0.7h-6.5h-0.2h0l-0.9-0.1c-0.1,0-0.2,0-0.2,0l0.1,0.4l0,0l0,0.1l0,0.1l0,0l0.1,0.4
+              c0,0.1,0.1,0.1,0.2,0l0.8-0.1h3.6v4.4h-3.1l-0.9-0.1c-0.1,0-0.2,0-0.2,0.1l0.1,0.5l0,0l0.1,0.4c0,0.1,0.1,0.1,0.2,0l0.8-0.1h3
+              v4.9h-4.4l-0.9-0.1c-0.1,0-0.2,0-0.2,0.1l0.1,0.4v0l0.1,0.5c0,0.1,0.1,0.1,0.2,0l0.8-0.1h11.1c0.1,0,0.2,0,0.2-0.1
+              c0-0.1,0-0.1-0.1-0.2C28.3,25.5,27.9,25,27.3,24.7z"></path>
+            <path class="st2" d="M34,19.1c0,0.2,0,0.3,0.1,0.4c0.1,0.1,0.3,0.1,0.5,0.1c0.3,0,0.5-0.1,0.7-0.2c0.2-0.1,0.2-0.2,0.2-0.5h4.3
+              c0,0.2,0,0.3,0.1,0.4c0.1,0.1,0.2,0.1,0.4,0.1c0.2,0,0.4-0.1,0.6-0.2c0.2-0.1,0.3-0.3,0.3-0.5v-3.5c0-0.1,0.1-0.2,0.2-0.2
+              c0.4-0.1,0.4-0.4,0.2-0.6c-0.3-0.3-0.8-0.5-1.3-0.7c-0.1,0-0.2,0-0.2,0l-0.3,0.5c-0.1,0.1-0.2,0.1-0.4,0.1h-3.7
+              c-0.3-0.2-0.9-0.5-1.6-0.7c-0.1,0-0.1,0-0.1,0.1V19.1z M35.5,15.3h4.1c0.1-0.1,0.1,0,0.2,0.1v2.8h-4.3V15.3z"></path>
+            <path class="st2" d="M43.4,21c-0.3-0.3-0.8-0.5-1.3-0.7c-0.1,0-0.2,0-0.2,0l-0.3,0.5c-0.1,0.1-0.2,0.1-0.4,0.1h-1.4
+              c-0.3-0.2-0.8-0.4-1.5-0.6c-0.1,0-0.1,0-0.1,0.1v6.1c0,0.2,0,0.3,0.1,0.4c0.1,0.1,0.3,0.1,0.5,0.1c0.3,0,0.5-0.1,0.7-0.2
+              c0.2-0.1,0.2-0.3,0.2-0.6v-0.2h2v0.2c0,0.2,0,0.4,0.1,0.5C41.9,27,42,27,42.2,27c0.2,0,0.4-0.1,0.6-0.2c0.2-0.1,0.3-0.3,0.3-0.5
+              v-4.5c0-0.1,0.1-0.2,0.2-0.2C43.6,21.5,43.7,21.3,43.4,21z M41.6,25.5h-2v-3.6h1.8c0.1,0,0.1,0,0.2,0.1V25.5z"></path>
+            <path class="st2" d="M37.4,21c-0.3-0.3-0.8-0.5-1.3-0.7c-0.1,0-0.2,0-0.2,0l-0.4,0.5c0,0.1-0.2,0.1-0.4,0.1h-1.4
+              c-0.3-0.2-0.8-0.4-1.6-0.6c-0.1,0-0.1,0-0.1,0.1v6c0,0.2,0,0.3,0.1,0.4c0.1,0.1,0.3,0.1,0.5,0.1c0.3,0,0.5-0.1,0.7-0.2
+              c0.2-0.1,0.2-0.3,0.2-0.6v-0.1h2v0.3c0,0.2,0,0.4,0.1,0.5c0.1,0.1,0.3,0.1,0.4,0.1c0.2,0,0.4-0.1,0.6-0.2
+              c0.2-0.1,0.3-0.3,0.3-0.5v-4.6c0-0.1,0.1-0.2,0.1-0.2C37.6,21.5,37.7,21.3,37.4,21z M35.6,25.5h-2v-3.6h1.8c0.1,0,0.1,0,0.2,0.1
+              V25.5z"></path>
+          </g>
+          <g>
+            <path class="st2" d="M50.6,37l2.9,1.3l0.3-2.1l-3-0.6C50.7,36.2,50.6,36.6,50.6,37z"></path>
+            <path class="st2" d="M50.7,34.8l2.9-1l-0.3-2.1l-2.7,1.8C50.7,33.9,50.7,34.3,50.7,34.8z"></path>
+            <path class="st2" d="M33.2,38.7l2.3-0.2l0.1-1l-4.5,0.4l-1.6,0.1c0.1-0.4,0.3-0.9,0.4-1.3l1.3-0.1l4.6-0.4l0.1-1l-4.7,0.4
+              l-1.1,0.1c0.1-0.4,0.2-0.8,0.3-1.3l0.9-0.1l4.8-0.4l0.1-1l-4.8,0.4l-0.8,0.1c0.1-0.4,0.1-0.7,0.2-1.1l0.7-0.1l4.9-0.4l0.1-1
+              L34.6,31l0.1-0.7l-2.9,0.2l-0.1,0.7l-3.3,0.3l-0.2-0.7l-2.9,0.2l0.2,0.7l-1.8,0.2l-0.1,1l3.8-0.3c0,0.2-0.1,0.6-0.1,1.1l-3.8,0.3
+              l-0.1,1l3.8-0.3c-0.1,0.4-0.1,0.8-0.2,1.3l-3.8,0.3l-0.1,1l3.7-0.3c-0.1,0.4-0.2,0.9-0.3,1.3L23,38.6l-0.1,1l0,0l3.5-0.3
+              c-0.6,2.4-1.4,4.8-2.6,6.3c0,0,3.1-1.1,5.2-6.6l0.7-0.1l0.4,1.1c1.1,2.9,3.7,4.5,6.5,4.2h0l1.1-0.1
+              C37.8,44.2,33.3,43.6,33.2,38.7z"></path>
+            <path class="st2" d="M47.7,40.7c-0.4-0.4-0.8-0.9-1.2-1.3l0.5,0.1c0.1,0,0.2,0.1,0.3,0.1c0,0,0,0,0,0c0,0,0.1,0,0.1,0
+              c0,0,0,0,0,0c0,0,0.1,0,0.1,0c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0.1,0,0.1,0c0.8-0.1,1.4-0.9,1.7-2c0.1-0.3,0.1-0.6,0.2-0.9
+              c0.1-0.5,0.1-1,0.1-1.6c0-1.2-0.2-2.3-0.5-3c0-0.1-0.1-0.2-0.1-0.3l1.2,0.2l0.4,0.1l0.2-1.7l-2.2-0.4l-1.3-0.2L44,29.3l-6.1,2.4
+              l-0.2,1.9l6.4-2.5l1.4,0.2l0.7,0.1l-1,0.4l-4.5,1.7c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0
+              c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0l-1.8,0.7l-1.2,9l1.4-0.1l3.7-0.3l0.1-1l-2.1,0.2l0,0l0.2-4l0-0.2l1.5,0.4
+              c4.8,5.9,8.8,5.1,8.8,5.1C49.9,42.8,48.7,41.7,47.7,40.7z M47.7,32.2c0.2,0.2,0.7,1.2,0.7,3c0,1.9-0.5,3-0.8,3.2
+              c-0.2-0.2-0.7-1.2-0.7-3C46.9,33.5,47.4,32.4,47.7,32.2z M41.1,36.7c-0.1-0.1-0.1-0.5-0.1-0.9c0-0.5,0.1-0.9,0.2-1l4.8-1.9
+              c-0.2,0.7-0.3,1.6-0.3,2.5c0,1,0.1,1.8,0.3,2.5L41.1,36.7z"></path>
+            <path class="st2" d="M21.1,39.6c0.2-1.4,0.7-5.7,0.7-5.7l-8,0.7l-2.2,0.2l-0.1,1.7c0,0-0.4,6.6-2.3,9.3c0,0,0.8-0.3,1.7-1.4
+              c0.3-0.4,0.7-0.9,1.1-1.6c0.8-1.4,1.4-3.5,1.7-6.5l0.1-0.6l6-0.5c0,0-0.4,3.5-0.6,4.7c-0.1,1.2,0.2,2,0.7,2.6
+              c0.1,0.2,0.3,0.3,0.5,0.4c0.6,0.4,1.4,0.6,2.2,0.6c0.1,0,0.6-0.1,0.6-0.1S20.7,42.2,21.1,39.6z"></path>
+            <polygon class="st2" points="54.5,41.4 53.3,41.1 53,39.3 52.8,39.3 52.4,41.2 51.2,41.5 51.2,41.8 52.4,42 52.7,43.9 53,43.9 
+              53.3,42 54.5,41.6 			"></polygon>
+            <path class="st2" d="M10.9,34.9l0.1-0.8l10.9-1l0.1-1l-5.2,0.4l0.1-0.7l-2.4,0.2l-0.1,0.7L9,33.2v0l0,0l-0.2,1.8l-1.4,0.1
+              l-0.2,1.4l1.4-0.1c-0.1,0.4-0.1,0.8-0.2,1.2l-1.4,0.1l-0.2,1.4L8.1,39c-0.4,1.9-1,4-2,5.2C6.1,44.3,9.9,42.9,10.9,34.9L10.9,34.9
+              z"></path>
+            <path class="st2" d="M19,42.6l-1.7,0.2l0,0c0.1,0.3,0.2,0.5,0.3,0.8l-1.4,0.1l0.3-1.8l1.7-0.1l0.1-1h0l0.3-2h0l0.1-1L17,37.9
+              l0.1-0.7l1.6-0.1l0.1-1l-4.6,0.4l-0.1,1l1.6-0.1L15.7,38l-1.6,0.1l0,0.1h0l-0.5,3.8l0,0l0,0l1.6-0.1l-0.2,1.8l-2.1,0.2l-0.1,1
+              l5.6-0.5c1,0.9,2.3,0.9,2.3,0.9C19.4,44.6,19,43.1,19,42.6z M16.8,38.9l0.6,0l-0.2,2l-0.6,0.1L16.8,38.9z M14.8,41l0.3-2l0.5,0
+              l-0.3,2L14.8,41z"></path>
+          </g>
+        </g>
+      </g>
+      </svg>
+      </a>
+    </div>
+    <div class="darkredbar">
+      <p class="footer-desc">	&copy; 2021 Wowprime.Corp. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script>
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: false,
+      dot: false,
+      autoplay: true,
+      autoplayTimeout: 5000,
+      autoplayHoverPause: true,
+      responsive: {
+        0: {
+          items: 3
+        }
+      }
+    });
+
+  </script>
+</body>
+
+</html>
