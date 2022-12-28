@@ -5,25 +5,47 @@
     <meta charset="UTF-8">
     <style>
         /* 01. 改變滑鼠經過 radio 的樣式 */
-        
+        input[type=radio]:hover{
+            cursor: pointer;
+        }
 
         /* 02-01. :valid 驗證通過時的樣式設定 */
         
+        input[type="email"]:valid, input[type="text"]:valid, input[type="tel"]:valid{
+            background-color:  rgba(144, 238, 144, 0.5);
+        }
 
         /* 02-02. :invalid 驗證不通過時的樣式設定 */
-        
+        input[type="email"]:invalid, input[type="text"]:invalid, input[type="tel"]:invalid{
+            background-color: pink;
+        }
 
         /* 03-01. 驗證通過時 輸入框後面顯示 ✓ */
-        
+        input[type="email"]:valid + span::after, input[type="text"]:valid + span::after, input[type="tel"]:valid + span::after{
+            content: "✓";
+            color: green;
+        }
+        /* input::after{
+            content: "✓";
+            color: greenyellow;
+        } */
 
         /* 03-02. 驗證不通過時 輸入框後面顯示 ✖ */
-
+        input[type="email"]:invalid + span::after, input[type="text"]:invalid + span::after, input[type="tel"]:invalid + span::after{
+            content: "✖";
+            color: red;
+        }
         
         /* 04-01. 設定取得焦點的背景顏色greenyellow */
-        
+        input:focus{
+            background-color: greenyellow!important;
+        }
 
         /* 04-02. 設定勾選時 label 顏色 blue */
-        
+        input:checked + label{
+            color: blue;
+            text-decoration: line-through;
+        }
 
     </style>
 </head>
@@ -32,13 +54,27 @@
     <form>
         <!-- 照上方CSS設定 -->
         <!-- 01. 產生 單選按鈕元素 -->
-        
-
+        <input type="radio" id="lol"><label for="lol">LOL</label>
+        <br>
         <!-- 02. 產生 可以輸入 email 的方框 以及 -->
+        email: <input type="email" placeholder="enter email"><span></span>
+
+        <br><br>
         <!--     產生 可以輸入 文字  的方框，並限制只能輸入大寫英文 以及 -->
+        text: <input type="text" placeholder="enter text" pattern="[A-Z]{0,5}"><span></span>
+
+        <br><br>
         <!--     產生 可以輸入 電話  的方框，並限制為台灣手機號碼格式 以及 -->
+
+        Tel: <input type="tel" placeholder="####-###-###" pattern="[0-9]{4}-[0-9]{3}-[0-9]{3}"><span></span><br><br>
+        <!-- <input type="tel" placeholder="enter text" pattern="[A-Z]"> -->
         <!--     產生 可以輸入 文字  的方框，並限制輸入身分證字號格式 -->
-        
+        ID: <input type="text" placeholder="A123456789" pattern="[A-Z]{1}[0-9]{9}"><span></span>
+
+        <br><br>
+        <input type="checkbox" id="breakfast"><label for="breakfast">早餐</label>
+        <input type="checkbox" id="lunch"><label for="lunch">午餐</label>
+        <input type="checkbox" id="dinner"><label for="dinner">晚餐</label>
 
     </form>
 </body>
