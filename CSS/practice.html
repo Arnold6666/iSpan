@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 300px;
+        }
+
+        input#blur:checked ~ img{
+            filter: blur(5px)
+        }
+        
+        input#brightness:checked ~ img{
+            filter: brightness(200%)
+        }
+
+        input#contrast:checked ~ img{
+            filter: contrast(200%)
+        }
+    </style>
+</head>
+<body>
+    <input type="radio" id="blur" name="imgType"><label for="blur">blur(5px)</label>
+    <br>
+    <input type="radio" id="brightness" name="imgType"><label for="brightness">brightness(200%)</label>
+    <br>
+    <input type="radio" id="contrast" name="imgType"><label for="contrast">contrast(200%)</label>
+    <br>
+    <img src="33_filter/img/sunny.jpg" alt="">
+</body>
+</html>

@@ -11,6 +11,7 @@
 
 .navBar li:hover {
     background-color: #656565;
+    background-clip: content-box;
 }
 
 .navBar li a {
