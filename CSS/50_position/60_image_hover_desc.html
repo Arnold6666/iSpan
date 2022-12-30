@@ -5,7 +5,29 @@
     <meta charset="UTF-8">
     <style>
         /* 參照 60_image_hover_desc.png，請試著加入 css，讓文字在滑鼠經過時才顯示  */
+        figure{
+            width: 80%;
+            position: relative;
+        }
 
+        figure img{
+            width: 100%;
+        }
+
+        .desc{
+            display: none;
+        }
+
+        figure:hover > .desc{
+            display: block;
+            box-sizing: border-box;
+            width: 100%;
+            position: absolute;
+            font-size: 2rem;
+            bottom: 60px;
+            padding: 20px;
+            background-color: rgba(144, 238, 144, 0.65);
+        }
         
     </style>
 </head>
