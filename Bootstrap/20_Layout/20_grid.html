@@ -7,25 +7,171 @@
     <title>grid</title>
     <link rel="stylesheet" href="../_css/bootstrap.css">
     <script src="../_js/bootstrap.bundle.js"></script>
+    <style>
+        .col:nth-of-type(odd) {
+            background-color: lightblue;
+        }
+
+        .col:nth-of-type(even) {
+            background-color: lightgreen;
+        }
+    </style>
 </head>
 
 <body>
 
     <h4>Bootstrap Grids</h4>
-    <p><a href="https://www.w3schools.com/bootstrap5/bootstrap_grid_basic.php">https://www.w3schools.com/bootstrap5/bootstrap_grid_basic.php</a></p>
+    <p><a
+            href="https://www.w3schools.com/bootstrap5/bootstrap_grid_basic.php">https://www.w3schools.com/bootstrap5/bootstrap_grid_basic.php</a>
+    </p>
     <h4>Bootstrap Grid Examples</h4>
-    <p><a href="https://www.w3schools.com/bootstrap5/bootstrap_grid_examples.php">https://www.w3schools.com/bootstrap5/bootstrap_grid_examples.php</a></p>
+    <p><a
+            href="https://www.w3schools.com/bootstrap5/bootstrap_grid_examples.php">https://www.w3schools.com/bootstrap5/bootstrap_grid_examples.php</a>
+    </p>
     <h4>Grid options</h4>
-    <p><a href="https://getbootstrap.com/docs/5.2/layout/grid/#grid-options">https://getbootstrap.com/docs/5.2/layout/grid/#grid-options</a></p>    
+    <p><a
+            href="https://getbootstrap.com/docs/5.2/layout/grid/#grid-options">https://getbootstrap.com/docs/5.2/layout/grid/#grid-options</a>
+    </p>
 
     <h4>Row columns</h4>
-    <p><a href="https://getbootstrap.com/docs/5.2/layout/grid/#row-columns">https://getbootstrap.com/docs/5.2/layout/grid/#row-columns</a></p>
+    <p><a
+            href="https://getbootstrap.com/docs/5.2/layout/grid/#row-columns">https://getbootstrap.com/docs/5.2/layout/grid/#row-columns</a>
+    </p>
     <h4>Nesting</h4>
-    <p><a href="https://getbootstrap.com/docs/5.2/layout/grid/#nesting">https://getbootstrap.com/docs/5.2/layout/grid/#nesting</a></p>
+    <p><a
+            href="https://getbootstrap.com/docs/5.2/layout/grid/#nesting">https://getbootstrap.com/docs/5.2/layout/grid/#nesting</a>
+    </p>
     <hr>
 
     <!-- 10. 請試著透過 col-* 或者 row-cols-* 的設定，將畫面平分成四欄 -->
+    <div class="row">
+        <div class="col">1</div>
+        <div class="col">2</div>
+        <div class="col">3</div>
+        <div class="col">4</div>
+        <div class="col">5</div>
+        <div class="col">6</div>
+    </div>
 
+    <hr>
+    <div class="row">
+        <div class="col">1</div>
+        <div class="col">2</div>
+        <div class="col">3</div>
+        <div class="col">4</div>
+        <div class="col">5</div>
+        <div class="col">6</div>
+        <div class="col">1</div>
+        <div class="col">2</div>
+        <div class="col">3</div>
+        <div class="col">4</div>
+        <div class="col">5</div>
+        <div class="col">6</div>
+        <div class="col">13</div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-lg-3 col-md-6 bg-primary text-white">1</div>
+        <div class="col-lg-3 col-md-6 bg-success text-white">2</div>
+        <div class="col-lg-3 col-md-6 bg-warning text-white">
+            <div class="row">
+                <div class="col bg-primary">1</div>
+                <div class="col bg-success">2</div>
+                <div class="col bg-warning">3</div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 bg-success text-white">4</div>
+    </div>
+
+    <div class="row">
+        <div class="col-5 bg-primary">5</div>
+        <div class="col-8 bg-info">8</div>
+    </div>
+
+    <hr>
+
+    <div class="row" style="text-align: center;">
+        <div class="col-12 col-md-4 bg-primary">A</div>
+        <div class="col-12 col-md-4 bg-success">B</div>
+        <div class="col-12 col-md-4 ">
+            <div class="row">
+                <div class="col-12 bg-warning">C</div>
+                <div class="col-12 bg-info">D</div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row" style="text-align: center;">
+        <div class="col-12 col-md-4 bg-primary">A</div>
+        <div class="col-12 col-md-4 bg-success">B</div>
+        <div class="col-12 col-md-4 ">
+            <div class="row">
+                <div class="col-12 bg-warning">C</div>
+            </div>
+            <div class="row">
+                <div class="col-12 bg-info">D</div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row" style="text-align: center;">
+        <div class="col-12 col-md-4 "><img src="https://picsum.photos/id/45/300/400" alt=""></div>
+        <div class="col-12 col-md-4 ">
+            <div class="row">
+                <div class="col-12 "><img src="https://picsum.photos/id/46/300/200" alt=""></div>
+                <div class="col-12 "><img src="https://picsum.photos/id/47/300/200" alt=""></div>
+            </div>
+        </div>
+        <div class="col-12 col-md-4 ">
+            <div class="row">
+                <div class="col-12 "><img src="https://picsum.photos/id/48/300/200" alt=""></div>
+            </div>
+            <div class="row">
+                <div class="col-12 "><img src="https://picsum.photos/id/49/300/200" alt=""></div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row" style="text-align: center;">
+        <div class="col-12 col-md-4 "><img src="https://picsum.photos/id/45/300/400" alt=""></div>
+        <div class="col-12 col-md-8 ">
+            <div class="row">
+                <div class="col-6"><img src="https://picsum.photos/id/46/300/200" alt=""></div>
+                <div class="col-6"><img src="https://picsum.photos/id/47/300/200" alt=""></div>
+                <div class="col-6"><img src="https://picsum.photos/id/48/300/200" alt=""></div>
+                <div class="col-6"><img src="https://picsum.photos/id/49/300/200" alt=""></div>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row" style="text-align: center;">
+        <div class="col-12 col-md-4 "><img src="https://picsum.photos/id/45/300/400" alt=""></div>
+        <div class="col-12 col-md-8">
+            <div class="row">
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-12"><img src="https://picsum.photos/id/46/300/200" alt=""></div>
+                        <div class="col-12"><img src="https://picsum.photos/id/47/300/200" alt=""></div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-12"><img src="https://picsum.photos/id/48/300/200" alt=""></div>
+                        <div class="col-12"><img src="https://picsum.photos/id/40/300/200" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- 20. 請試著透過 col-斷點-* 的設定當瀏覽器寬度 ≥768px 時，將畫面平分成兩欄 -->
 
     <!-- 30. 觀察現有的網頁，進行巢狀堆疊Grid的練習 -->
