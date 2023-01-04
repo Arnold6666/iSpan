@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.nav</title>
+    <link rel="stylesheet" href="../_css/bootstrap.css">
+    <script src="../_js/bootstrap.bundle.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h4>官方網站</h4>
+        <p><a
+                href="https://getbootstrap.com/docs/5.2/components/navs-tabs/">https://getbootstrap.com/docs/5.2/components/navs-tabs/</a>
+        </p>
+        <h4>Bootstrap Navs</h4>
+        <p><a
+                href="https://www.w3schools.com/bootstrap5/bootstrap_navs.php">https://www.w3schools.com/bootstrap5/bootstrap_navs.php</a>
+        </p>
+
+        <hr>
+
+        <!-- 10. 加入一個 <ul> 標籤，並添加類別 .nav  -->
+
+        <!-- 20. 加入 4 個超連結： GitHub 、 Twitter 、 Examples 、 About  -->
+
+        <!-- 21. 超連結標籤加入 .nav-link -->
+
+        <!-- 25. <ul> 標籤 套用 .nav-fill 後，元素是否有分散對齊？ -->
+
+        <!-- 30. 該如何讓超連結的被選取時底色會改變? -->
+
+        <!-- 50. 該如何讓選單在小屏幕時，改為單欄顯示 -->
+
+        <!-- 60. 該如何讓導覽被點選時，出現對應的資訊？ -->
+        <!--   a.  <a>元素 加入 href="#元素id" -->
+        <!--   b.  <a>元素 加入 data-bs-toggle="pill" -->
+        <!--   c.  製作內容： .tab-content > .tab-pane  -->
+        <!--   d.  製作內容： 包含 .tab-pane 的元素必須有 id 屬性  -->
+        <ul class="nav nav-fill nav-pills mb-3 flex-column flex-md-row" role="tablist" id="pills-tab">
+            <li class="nav-item"><a href="#" class="nav-link active" id="pills-github-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-github" type="button" role="tab">GitHub</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" id="pills-twitter-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-twitter" type="button" role="tab">Twitter</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" id="pills-examples-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-examples" type="button" role="tab">Examples</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" id="pills-about-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-about" type="button" role="tab">About</a></li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-github" role="tabpanel" tabindex="0">
+                <h1>GitHub</h1>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam odio tempora a fugit voluptas sequi
+                quidem modi sit nesciunt atque, ducimus porro tempore dolorum dolor vitae architecto repudiandae,
+                asperiores voluptatem quo corrupti? Nulla, quae. Nisi accusamus corrupti ut corporis quibusdam?
+            </div>
+            <div class="tab-pane fade" id="pills-twitter" role="tabpanel" tabindex="1">
+                <h1>Twitter</h1>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium sed consectetur quo cumque a dolorum
+                consequatur, ducimus esse non, ipsa odit sequi fuga in facere quos aliquam, consequuntur magnam quia!
+            </div>
+            <div class="tab-pane fade" id="pills-examples" role="tabpanel" tabindex="2">
+                <h1>Examples</h1>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam necessitatibus sapiente atque laudantium
+                animi consequuntur totam suscipit non natus, ducimus fugiat quis magni repellendus, quam obcaecati
+                laborum? Corrupti, aliquam sapiente.
+            </div>
+            <div class="tab-pane fade" id="pills-about" role="tabpanel" tabindex="3">
+                <h1>About</h1>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit, cum omnis. Saepe odio corrupti
+                soluta eveniet consequuntur culpa pariatur animi, quis voluptatibus tenetur rem delectus velit harum
+                necessitatibus, explicabo ipsa.
+            </div>
+        </div>
+        <hr>
+        <ul class="nav nav-fill nav-pills mb-3 flex-column flex-md-row">
+            <li class="nav-item"><a href="#github" class="nav-link active" data-bs-toggle="pill">GitHub</a></li>
+            <li class="nav-item"><a href="#twitter" class="nav-link" data-bs-toggle="pill">Twitter</a>
+            </li>
+            <li class="nav-item"><a href="#examples" class="nav-link" data-bs-toggle="pill">Examples</a>
+            </li>
+            <li class="nav-item"><a href="#about" class="nav-link" data-bs-toggle="pill">About</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="github">
+                <h1>GitHub</h1>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam odio tempora a fugit voluptas sequi
+                quidem modi sit nesciunt atque, ducimus porro tempore dolorum dolor vitae architecto repudiandae,
+                asperiores voluptatem quo corrupti? Nulla, quae. Nisi accusamus corrupti ut corporis quibusdam?
+            </div>
+            <div class="tab-pane" id="twitter">
+                <h1>Twitter</h1>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium sed consectetur quo cumque a dolorum
+                consequatur, ducimus esse non, ipsa odit sequi fuga in facere quos aliquam, consequuntur magnam quia!
+            </div>
+            <div class="tab-pane" id="examples">
+                <h1>Examples</h1>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam necessitatibus sapiente atque laudantium
+                animi consequuntur totam suscipit non natus, ducimus fugiat quis magni repellendus, quam obcaecati
+                laborum? Corrupti, aliquam sapiente.
+            </div>
+            <div class="tab-pane" id="about">
+                <h1>About</h1>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit, cum omnis. Saepe odio corrupti
+                soluta eveniet consequuntur culpa pariatur animi, quis voluptatibus tenetur rem delectus velit harum
+                necessitatibus, explicabo ipsa.
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

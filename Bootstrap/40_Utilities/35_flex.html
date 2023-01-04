@@ -13,28 +13,192 @@
     <div class="container">
 
         <h4>官方網站</h4>
-        <p><a href="https://getbootstrap.com/docs/5.2/utilities/flex/">https://getbootstrap.com/docs/5.2/utilities/flex/</a></p>
+        <p><a
+                href="https://getbootstrap.com/docs/5.2/utilities/flex/">https://getbootstrap.com/docs/5.2/utilities/flex/</a>
+        </p>
         <h4>Bootstrap Flex</h4>
-        <p><a href="https://www.w3schools.com/bootstrap5/bootstrap_flex.php">https://www.w3schools.com/bootstrap5/bootstrap_flex.php</a></p>
+        <p><a
+                href="https://www.w3schools.com/bootstrap5/bootstrap_flex.php">https://www.w3schools.com/bootstrap5/bootstrap_flex.php</a>
+        </p>
         <hr>
 
         <!-- 10. 比較 .d-flex和 .d-inline-flex 的差異 -->
+        <h3>10. .d-flex</h3>
+        <div class="d-flex p-3 bg-secondary">
+            cat
+            <div class="p-2 bg-info">I'm a flexbox item!</div>
+            <div class="p-2 bg-success">I'm a flexbox item!</div>
+            <div class="p-2 bg-warning">I'm a flexbox item!</div>
+            dog
+        </div>
 
+        <hr>
+
+        <h3>10. .d-inline-flex</h3>
+        <div class="d-inline-flex p-3 bg-secondary">
+            cat
+            <div class="p-2 bg-info">I'm a flexbox item!</div>
+            <div class="p-2 bg-success">I'm a flexbox item!</div>
+            <div class="p-2 bg-warning">I'm a flexbox item!</div>
+            dog
+        </div>
+        <hr>
         <!-- 11. 比較 .flex-nowrap 和 .flex-wrap 的差異 -->
-       
+        <h3>11. .flex-nowrap</h3>
+        <div class="d-flex p-3 flex-nowrap bg-secondary">
+            cat
+            <div class="p-2 bg-info">I'm a flexbox item!</div>
+            <div class="p-2 bg-success">I'm a flexbox item!</div>
+            <div class="p-2 bg-warning">I'm a flexbox item!</div>
+            <div class="p-2 bg-info">I'm a flexbox item!</div>
+            <div class="p-2 bg-success">I'm a flexbox item!</div>
+            <div class="p-2 bg-warning">I'm a flexbox item!</div>
+            <div class="p-2 bg-info">I'm a flexbox item!</div>
+            <div class="p-2 bg-success">I'm a flexbox item!</div>
+            <div class="p-2 bg-warning">I'm a flexbox item!</div>
+            <div class="p-2 bg-info">I'm a flexbox item!</div>
+            <div class="p-2 bg-success">I'm a flexbox item!</div>
+            <div class="p-2 bg-warning">I'm a flexbox item!</div>
+            <div class="p-2 bg-info">I'm a flexbox item!</div>
+            <div class="p-2 bg-success">I'm a flexbox item!</div>
+            <div class="p-2 bg-warning">I'm a flexbox item!</div>
+            <div class="p-2 bg-info">I'm a flexbox item!</div>
+            <div class="p-2 bg-success">I'm a flexbox item!</div>
+            <div class="p-2 bg-warning">I'm a flexbox item!</div>
+            dog
+        </div>
+
+        <hr>
+
+        <h3>11. .flex-wrap</h3>
+        <div class="d-flex p-3 flex-wrap bg-secondary">
+            cat
+            <div class="p-2 bg-info">I'm a flexbox item!</div>
+            <div class="p-2 bg-success">I'm a flexbox item!</div>
+            <div class="p-2 bg-warning">I'm a flexbox item!</div>
+            <div class="p-2 bg-info">I'm a flexbox item!</div>
+            <div class="p-2 bg-success">I'm a flexbox item!</div>
+            <div class="p-2 bg-warning">I'm a flexbox item!</div>
+            <div class="p-2 bg-info">I'm a flexbox item!</div>
+            <div class="p-2 bg-success">I'm a flexbox item!</div>
+            <div class="p-2 bg-warning">I'm a flexbox item!</div>
+            <div class="p-2 bg-info">I'm a flexbox item!</div>
+            <div class="p-2 bg-success">I'm a flexbox item!</div>
+            <div class="p-2 bg-warning">I'm a flexbox item!</div>
+            <div class="p-2 bg-info">I'm a flexbox item!</div>
+            <div class="p-2 bg-success">I'm a flexbox item!</div>
+            <div class="p-2 bg-warning">I'm a flexbox item!</div>
+            <div class="p-2 bg-info">I'm a flexbox item!</div>
+            <div class="p-2 bg-success">I'm a flexbox item!</div>
+            <div class="p-2 bg-warning">I'm a flexbox item!</div>
+            dog
+        </div>
+
+        <hr>
         <!-- 20. .flex-grow-0 和 .flex-grow-1 有什麼差異？ -->
         <!--      是否可以設置為 flex-grow-2？ -->
         <!--      * 上述設定需放置在 .d-flex 底下的元素中  -->
- 
-        <!-- 25. 透過 .order-* 改變元素順序 -->
+        <h3>20. .flex-grow-0 .flex-grow-1</h3>
+        <div class="d-flex p-3 flex-nowrap bg-secondary">
+            cat
+            <div class="p-2 bg-info flex-grow-0">I'm a flexbox item!</div>
+            <div class="p-2 bg-success flex-grow-1">I'm a flexbox item!</div>
+            <div class="p-2 bg-warning flex-grow-1">I'm a flexbox item!</div>
+            dog
+        </div>
 
+        <hr>
+        <!-- 25. 透過 .order-* 改變元素順序 -->
+        <h3>25. .order-*</h3>
+        <div class="d-flex p-3 bg-secondary">
+            <div class="p-2 bg-info order-3">I'm a flexbox item!</div>
+            <div class="p-2 bg-success order-2">I'm a flexbox item!</div>
+            <div class="p-2 bg-warning order-1">I'm a flexbox item!</div>
+        </div>
+
+        <hr>
         <!-- 30. .flex-row 和 .flex-row-reverse 的差異 -->
         <!--      * 上述設定需放置於擁有 .d-flex 的元素中  -->
-       
+        <h3>30. .flex-row</h3>
+        <div class="d-flex p-3 flex-row bg-secondary">
+            <div class="p-2 bg-info">I'm a flexbox item!</div>
+            <div class="p-2 bg-success">I'm a flexbox item!</div>
+            <div class="p-2 bg-warning">I'm a flexbox item!</div>
+        </div>
+
+        <hr>
+
+        <h3>30. .flex-row-reverse</h3>
+        <div class="d-flex p-3 flex-row-reverse bg-secondary w-50">
+            <div class="p-2 bg-info">I'm a flexbox item!</div>
+            <div class="p-2 bg-success">I'm a flexbox item!</div>
+            <div class="p-2 bg-warning">I'm a flexbox item!</div>
+        </div>
+
+        <hr>
         <!-- 40. 該如何設置，可以讓外層容器佔瀏覽器寬度的一半？ -->
-       
+        <h3>31. .flex-column</h3>
+        <div class="d-flex p-3 flex-column bg-secondary">
+            <div class="p-2 bg-info">I'm a flexbox item!</div>
+            <div class="p-2 bg-success">I'm a flexbox item!</div>
+            <div class="p-2 bg-warning">I'm a flexbox item!</div>
+        </div>
+
+        <hr>
+
+        <h3>31. .flex-column-reverse</h3>
+        <div class="d-flex p-3 flex-column-reverse bg-secondary">
+            <div class="p-2 bg-info">I'm a flexbox item!</div>
+            <div class="p-2 bg-success">I'm a flexbox item!</div>
+            <div class="p-2 bg-warning">I'm a flexbox item!</div>
+        </div>
+
+        <hr>
         <!-- 50. 該如何設置，讓第一個元素靠左邊，其餘元素靠右邊排列？-->
-    
+        <h3>50. .m-auto</h3>
+        <div class="d-flex p-3 bg-secondary">
+            <div class="p-2 bg-info me-auto">I'm a flexbox item!</div>
+            <div class="p-2 bg-success">I'm a flexbox item!</div>
+            <div class="p-2 bg-warning">I'm a flexbox item!</div>
+        </div>
+
+        <hr>
+
+        <h3>50. .m-auto</h3>
+        <div class="d-flex p-3 bg-secondary">
+            <div class="p-2 bg-info">I'm a flexbox item!</div>
+            <div class="p-2 bg-success m-auto">I'm a flexbox item!</div>
+            <div class="p-2 bg-warning">I'm a flexbox item!</div>
+        </div>
+
+        <hr>
+
+        <h3>50. .m-auto</h3>
+        <div class="d-flex p-3 bg-secondary">
+            <div class="p-2 bg-info">I'm a flexbox item!</div>
+            <div class="p-2 bg-success">I'm a flexbox item!</div>
+            <div class="p-2 bg-warning ms-auto">I'm a flexbox item!</div>
+        </div>
+
+        <hr>
+
+        <h3>50. .m-auto</h3>
+        <div class="d-flex p-3 bg-secondary">
+            <div class="p-2 bg-info">I'm a flexbox item!</div>
+            <div class="p-2 bg-success ms-auto">I'm a flexbox item!</div>
+            <div class="p-2 bg-warning">I'm a flexbox item!</div>
+        </div>
+
+        <hr>
+
+        <h3>50. .m-auto</h3>
+        <div class="d-flex p-3 bg-secondary">
+            <div class="p-2 bg-info">I'm a flexbox item!</div>
+            <div class="p-2 bg-success me-auto">I'm a flexbox item!</div>
+            <div class="p-2 bg-warning">I'm a flexbox item!</div>
+        </div>
+
+        <hr>
 
     </div>
 </body>

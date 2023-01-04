@@ -3819,8 +3819,8 @@ textarea.form-control-lg {
   margin-bottom: 0;
   list-style: none;
 }
-.navbar-nav .show > .nav-link,
-.navbar-nav .nav-link.active {
+.navbar-collapse .show > .nav-link,
+.navbar-collapse .nav-link.active {
   color: var(--bs-navbar-active-color);
 }
 .navbar-nav .dropdown-menu {

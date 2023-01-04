@@ -29,22 +29,36 @@
     <div class="container">
 
         <h4>官方網站</h4>
-        <p><a href="https://getbootstrap.com/docs/5.2/utilities/borders/">https://getbootstrap.com/docs/5.2/utilities/borders/</a></p>
+        <p><a
+                href="https://getbootstrap.com/docs/5.2/utilities/borders/">https://getbootstrap.com/docs/5.2/utilities/borders/</a>
+        </p>
         <h4>Borders</h4>
-        <p><a href="https://www.w3schools.com/bootstrap5/tryit.asp?filename=trybs_util_borders&stacked=h">https://www.w3schools.com/bootstrap5/tryit.asp?filename=trybs_util_borders&stacked=h</a></p>
+        <p><a
+                href="https://www.w3schools.com/bootstrap5/tryit.asp?filename=trybs_util_borders&stacked=h">https://www.w3schools.com/bootstrap5/tryit.asp?filename=trybs_util_borders&stacked=h</a>
+        </p>
 
         <hr>
 
         <!-- 10. 為什麼這樣設定div不會出現? -->
-        <div class="w-25 h-100 bg-success"></div>
+        <div class="w-25 h-100 bg-success">apple</div>
 
         <!-- 20. 複製貼上官網的範例，為什麼 border 測試不出來 -->
-
+        <span style="height: 100px;" class="bg-info d-inline-block w-25 border">A</span>
+        <span style="height: 100px;" class="bg-info d-inline-block w-25 border-top">B</span>
+        <span style="height: 100px;" class="bg-info d-inline-block w-25 border-end">D</span>
+        <span style="height: 100px;" class="bg-info d-inline-block w-25 border-bottom">C</span>
+        <span style="height: 100px;" class="bg-info d-inline-block w-25 border-start">E</span>
         <!-- 21. 設定不同的邊線顏色 -->
-
+        <div class="border border-warning border-5 rounded-end" style="height: 100px; width: 100px;">apple</div>
         <!-- 23. 調整 border 的寬度： border-N -->
 
         <!-- 25. 設定邊框圓角 -->
+        <div class="border border-warning border-5 rounded-top" style="height: 100px; width: 100px;">apple</div>
+        <div class="border border-warning border-5 rounded-bottom" style="height: 100px; width: 100px;">apple</div>
+        <div class="border border-warning border-5 rounded-start" style="height: 100px; width: 100px;">apple</div>
+        <div class="border border-warning border-5 rounded-end" style="height: 100px; width: 100px;">apple</div>
+        <div class="border border-warning border-5 rounded-circle" style="height: 100px; width: 200px;">apple</div>
+        <div class="border border-warning border-5 rounded-pill" style="height: 100px; width: 200px;">apple</div>
         <!--     .rounded-top    | rounded-bottom  -->
         <!--     .rounded-start  | rounded-end     -->
         <!--     .rounded-circle | .rounded-pill   -->
