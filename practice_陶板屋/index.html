@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>陶板屋 和風創作料理</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+    integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+  <header class="header d-flex">
+    <div class="l-logo">
+      <img src="images/logo.svg" alt="">
+    </div>
+    <nav class="header-nav d-flex ms-auto">
+      <li><a href="">和風料理<span>メニュー</span></a></li>
+      <li><a href="">陶板門市<span>ストア</span></a></li>
+      <li><a href="">最新情報<span>ニュース</span></a></li>
+      <li><a href="">陶板故事<span>ストーリー</span></a></li>
+      <li><a href="">加入我們<span>登録する</span></a></li>
+    </nav>
+  </header>
+  <main class="main">
+    <div class="carousel-container">
+      <div class="owl-carousel owl-theme owl-one" >
+        <div class="item">
+          <img src="images/banner-1.jpg" class="d-block">
+        </div>
+        <div class="item">
+          <img src="images/banner-2.jpg" class="d-block">
+        </div>
+      </div>
+    </div><!--carousel end-->
+
+    <div class="activities">
+      <div class="left">
+        <h2>
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+            y="0px" viewBox="0 0 218.787 110.777" enable-background="new 0 0 218.787 110.777" xml:space="preserve">
+            <path fill="none" stroke-miterlimit="10" d="M0.5,110.777V46.533l109-45.991l108.787,45.991v16.494"></path>
+          </svg>
+          <div>最新情報</div>
+        </h2>
+        <p><i class='bx bx-right-arrow-alt'></i>More</p>
+      </div>
+      <div class="owl-carousel owl-theme owl-two">
+        <figure class="item">
+          <img src="images/01-9.webp" alt="">
+          <figcaption>
+            <p class="date">2022.12.01 ~ 2023.01.19</p>
+            <div class="underline"></div>
+            <h4>歲末掏心感謝祭</h4>
+            <a class=""><i class='bx bx-right-arrow-alt'></i>More</a>
+          </figcaption>
+        </figure>
+        <figure class="item">
+          <img src="images/2-2.webp" alt="">
+          <figcaption>
+            <p class="date">2022.06.27</p>
+            <div class="underline"></div>
+            <h4>《冬・心温まる．》全新発売 </h4>
+            <a class=""><i class='bx bx-right-arrow-alt'></i>More</a>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="images/2202_wait.webp" alt="">
+          <figcaption>
+            <p class="date">2022.02.09 ~ 2022.12.31</p>
+            <div class="underline"></div>
+            <h4>《等一個人｜用心 讓安心不變 </h4>
+            <a class=""><i class='bx bx-right-arrow-alt'></i>More</a>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    $('.owl-one').owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      autoplay: true,
+      responsive: {
+        0: {
+          items: 1
+        }
+      }
+    },1000);
+    $('.owl-two').owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      autoplay: true,
+      responsive: {
+        0: {
+          items: 3
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

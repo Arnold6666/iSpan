@@ -7,6 +7,13 @@
     <title>.carousel</title>
     <link rel="stylesheet" href="../_css/bootstrap.css">
     <script src="../_js/bootstrap.bundle.js"></script>
+    <style>
+        .carousel-item>img{
+            height: 500px;
+            object-fit: cover;
+            object-position: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -21,13 +28,14 @@
               </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="https://picsum.photos/id/70/1200/800" alt="" class="d-block w-100">
+                    <!-- https://dummyimage.com/600x100/00ff5e/ffffff -->
+                    <img src="https://dummyimage.com/600x100/00ff5e/ffffff" alt="" class="d-block w-100">
                 </div>
                 <div class="carousel-item">
                     <img src="../_image/sunny.jpg" alt="" class="d-block w-100">
                 </div>
                 <div class="carousel-item">
-                    <img src="https://picsum.photos/id/72/1200/800" alt="" class="d-block w-100">
+                    <img src="https://dummyimage.com/600x100/f057c5/ffffff" alt="" class="d-block w-100">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#examples" data-bs-slide="prev">

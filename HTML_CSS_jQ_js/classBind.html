@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Bind</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <style>
+        .mousehover{
+            background-color: red;
+            color: white;
+        }
+        .mouseout{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1 v-bind:class="{'mousehover': mouseIn, 'mouseout': mouseOut}" @mouseover="change" @mouseout="restore">Vue is interesting</h1>
+    </div>
+    <script>
+        Vue.createApp({
+            data(){
+                return{
+                    mouseIn: true,
+                    mouseOut: false
+                }
+            },
+            methods:{
+                change(){
+                    this.mouseIn= true,
+                    this.mouseOut= false
+                },
+                restore(){
+                    this.mouseIn= false,
+                    this.mouseOut= true
+                }
+            }
+        }).mount('#app')
+    </script>
+</body>
+</html>
