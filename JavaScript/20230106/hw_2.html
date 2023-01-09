@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table td{
+      height: 20px;
+      width: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="ninebynine"></div>
+  <script>
+    window.onload = function () {
+      let ninebynine = document.getElementById("ninebynine");
+      // console.log(ninebynine);
+
+      // let tableFrame = `<table border="1" style="border-collapse:collapse;"><table>`;
+      let tr = ``;
+      let trContent = ``;
+      // let tableContent = ``;
+      for (i = 0; i < 10; i++) {
+        for (j = 1; j < 10; j++) {
+          if (i == 0) {
+            trContent += `<td>${j}</td>`;
+          } else {
+            trContent += `<td>${j * i}</td>`;
+          }
+        }
+        tr += `<tr><td>${i}</td>${trContent}</tr>`;
+        trContent = '';
+      }
+      ninebynine.innerHTML = `<table border="1" style="border-collapse:collapse;margin:0 auto;">${tr}<table>`
+    }
+  </script>
+</body>
+
+</html>

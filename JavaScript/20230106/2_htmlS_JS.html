@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+</head>
+<script>
+  let btn = document.getElementById('btn');
+  function myclick() {
+    // alert('hi');
+    x = document.getElementById('good');
+    x.innerHTML = "you Click!!!";
+    // x.innerText = "<h1>you Click!!!</h1>";    
+  }
+
+  window.onload = function() { //匿名函數只能調用一次，因沒有名字可以呼叫
+    document.getElementById("good").innerText = "Hiii";
+    // document.getElementById('btn').onclick = function() {
+    //   document.getElementById('good').innerHTML = "you Click!!!";    
+    // };
+
+    document.getElementById('btn').addEventListener('click',function() {
+      document.getElementById('good').innerHTML = "you Click!!!";    
+    });
+    document.getElementById('btn').addEventListener('click',function() {
+      alert('hi')   
+    });
+
+    // document.getElementsByTagName("button")[1].onclick = function(color = "orange", fz = 12, bgc = "lightgreen"){
+    //   document.getElementById("good").style  = `color: ${color}; font-size: ${fz}px; background-color: ${bgc};`;
+    //   // console.log(this.color);
+    // }
+
+    // document.getElementsByTagName("button")[2].onclick = function(color = "red", fz = 12, bgc = "lightblue"){
+    //   document.getElementById("good").style  = `color: ${color}; font-size: ${fz}px; background-color: ${bgc};`;
+    // }
+
+    // document.getElementsByTagName("button")[3].onclick = function(color = "green", fz = 12, bgc = "hotpink"){
+    //   document.getElementById("good").style  = `color: ${color}; font-size: ${fz}px; background-color: ${bgc};`;
+    // }
+  }
+
+  function setColor(color, fz, bgc) {
+    good = document.getElementById("good");
+    good.style = `color: ${color}; font-size:${fz}px; background-color: ${bgc};`; //存取good的css style並將color設定為參數color
+  }
+
+  var a = 10;
+
+  var a =20;
+
+  let c = 10;
+  if(true){
+    let c =20;
+  }
+
+  let b = 30;
+  console.log(b);
+  b = 40;
+  console.log(b);
+
+</script>
+
+<body>
+  <div id="good"></div>
+  <p style="background-color: rgb(255, 0, 0);"></p>
+  <button id="btn">click</button>
+  <br>
+  <br>
+  <button>Orange 12 lightgreen</button>
+  <button>Red 12 lightblue</button>
+  <button>Green 12 hotpink</button>
+</body>
+
+</html>

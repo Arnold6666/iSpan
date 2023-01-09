@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- <h1>加總</h1>
+  請輸入數字1: <input type="text" id="num1">
+  <br>
+  <br>
+  請輸入數字2: <input type="text" id="num2">
+  <br>
+  <br>
+  <button id="btn">加總</button>
+  <br>
+  <br>
+  <p id="sum">總合為：</p> -->
+</body>
+<script>
+  // document.getElementById('btn').addEventListener('click', function () {
+  //   let num1 = parseFloat(document.getElementById('num1').value);
+  //   let num2 = parseFloat(document.getElementById('num2').value);
+  //   let sum = document.getElementById("sum");
+  //   // console.log(sum);
+
+  //   if (typeof (num1) == "number" && typeof (num2) == "number") {
+  //     sum.innerHTML = `總合為：${num1 + num2}`;
+  //   } else {
+  //     sum.innerHTML = "請輸入正確的數字";
+  //   }
+  // });
+
+  // Teacher 
+  // window.onload = function(){
+  //   document.getElementById("btn").onclick = function(){
+  //     a = parseInt(document.getElementById("num1").value);
+  //     b = parseInt(document.getElementById("num2").value);
+  //     document.getElementById("sum").innerHTML = a + b;
+  //   }
+  // }
+
+  // mood = "soso";
+  // switch (mood) {
+  //   case "happy":
+  //     console.log("I am happy");
+  //     break
+  //   case "sad":
+  //     console.log("I am sad");
+  //     break
+  //   case "upset":
+  //     console.log("I am upset");
+  //     break
+  //   default:
+  //     console.log("I am soso");
+  // }
+
+  // if(mood === "happy"){
+  //   console.log("I am happy");
+  // }else if(mood === "sad"){
+  //   console.log("I am sad");
+  // }else if (mood === "upset"){
+  //   console.log("I am upset");
+  // }else{
+  //   console.log("I am soso");
+  // }
+
+  // for(i = 0; i < 10; i++){
+  //   if (i == 3){
+  //     continue
+  //   }
+  //   console.log(i);
+  // }
+  
+  // let i = 0;
+  // while(i < 10){
+  //   console.log(i)
+  //   i += 1;
+  // }
+  // 聊天室的功能可能為無窮迴圈
+
+
+  // i = 10;
+  // a = i++;
+  // console.log(a);
+  // console.log(i);
+  // let container = [];
+
+  // var str1 = '';
+  // var str2 = '';
+  // for(let i = 1; i < 10; i++){
+  //   for(let j = 1; j < 10; j++){
+  //     console.log(`${i} * ${j} = ${i * j}`)
+  //   }
+  // }
+
+  泡泡排序
+
+  a = [9, 5 , 2, 7];
+  var size = a.length;
+  for(let i = 0; i < size - 1; i++){
+    for(let j = i + 1; j < size; j++){
+      if(a[i] > a[j]){
+        let tmp = a[i];
+        a[i] = a[j]
+        a[j] = tmp;
+      }
+    }
+  }
+  console.log(a);
+</script>
+
+</html>

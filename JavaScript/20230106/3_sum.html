@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>加總</h1>
+  請輸入數字1: <input type="text" id="num1">
+  <br>
+  <br>
+  請輸入數字2: <input type="text" id="num2">
+  <br>
+  <br>
+  <button id="btn">加總</button>
+  <br>
+  <br>
+  <p id="sum">總合為：</p>
+</body>
+<script>
+  document.getElementById('btn').addEventListener('click', function () {
+    let num1 = parseFloat(document.getElementById('num1').value);
+    let num2 = parseFloat(document.getElementById('num2').value);
+    let sum = document.getElementById("sum");
+
+    if (isNaN(num1) || isNaN(num2)) {
+      sum.innerHTML = "請輸入數字";
+    }else if(num1 % 1 != 0  || num2 % 1 != 0){ //TeacherV： num1 != parseInt(num1)  || num2 != parseInt(num2)
+      sum.innerHTML = `限定整數`; 
+    }else if(num1 <= 100 && num1 <= 100 - num2){ //TeacherV： num1 != parseInt(num1)  || num2 != parseInt(num2)
+      sum.innerHTML = `總合為：${num1 + num2}`;
+    }else{
+      sum.innerHTML = `大於最大值100`;
+    }
+
+    // console.log(typeof(parseInt("asdf")));
+    // console.log(typeof(parseFloat('asdf')));
+    // console.log(typeof (num2));
+  });
+
+  // Teacher 
+  // window.onload = function(){
+  //   document.getElementById("btn").onclick = function(){
+  //     a = parseInt(document.getElementById("num1").value);
+  //     b = parseInt(document.getElementById("num2").value);
+  //     document.getElementById("sum").innerHTML = a + b;
+  //   }
+  // }
+</script>
+
+</html>

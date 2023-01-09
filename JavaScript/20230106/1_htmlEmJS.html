@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- <meta charset="utf8"> -->
+</head>
+
+<script>
+  // console.log('hi');
+  // alert('hi');
+
+  // if(confirm('hello')){
+  //   console.log('yes');
+  // }else{
+  //   console.log('no');
+  // }
+
+  // let name = prompt("Enter your name");
+  // if(name == null){
+  //   console.log("user inputs Nothing!!")
+  // }else{
+  //   console.log(name);
+  // }
+// 
+  // document.getElementById('btn').addEventListener('onclick');
+
+  
+
+  function myclick(){
+    // alert('hi');
+    x = document.getElementById('good');
+    x.innerHTML = "you Click!!!";    
+    // x.innerText = "<h1>you Click!!!</h1>";    
+  }
+
+  function docLoad(){
+    good = document.getElementById("good");
+    good.innerText = "Hii";
+  }
+
+  function setColor(color, fz, bgc){
+    good = document.getElementById("good");
+    good.style = `color: ${color}; font-size:${fz}px; background-color: ${bgc};`; //存取good的css style並將color設定為參數color
+  }
+
+  
+</script>
+
+<body onload="docLoad()"> <!-- onload 為body載入後執行的的事件-->
+  <div id="good"></div>
+  <p style="background-color: hotpink;"></p>
+  <button id="btn" onclick="myclick()">click</button>
+  <br>
+  <br>
+  <button onclick="setColor('orange', 12, 'lightgreen')">Orange 12 lightgreen</button>
+  <button onclick="setColor('red', 12, 'lightblue')">Red 12 lightblue</button>
+  <button onclick="setColor('green', 12, 'hotpink')">Green 12 hotpink</button>
+
+  <script>
+    // good = document.getElementById("good");
+    // good.innerText = "Hi";
+    // docLoad();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- <div id="test"></div> -->
+  搜尋：<input type="text" id="input">
+  <p>The most popular destinations so far are Singapore, South Korea, Hong Kong, Japan and Thailand, based on Trip.com
+    Group bookings. For long-haul destinations, the US, UK and Australia lead the pack.
+    "The trend we have seen is that short-haul flights are popular due to (lower) prices. Singapore, South Korea and
+    Japan have always been quite popular with Chinese travelers, even pre-Covid," says Min.
+    It makes sense for regional travel to recover first, says Dr. Wolfgang Georg Arlt, CEO of the China Outbound Tourism
+    Research Institute (COTRI), since it is easier and less expensive to visit nearby destinations.
+    But the first quarter of 2023 will be almost exclusively urgent non-leisure travel, such as business trips, family
+    reunions, student travel or healthcare needs, he adds.
+    Chinese business travelers will want to reconnect with the world's major economies, like the US, Japan and Europe.
+    In addition, destinations like the US, UK and Australia also attract many Chinese students, so some travelers may be
+    planning reunions.</p>
+  <script>
+    window.onload = function () {
+      // let s = "Hello, \n<br>World!"
+      // document.getElementById('test').innerHTML = s;
+      let map =[];
+      document.getElementById("input").onkeyup = function () {
+        let key = (document.getElementById("input").value).toLowerCase();
+        let content = document.getElementsByTagName("p")[0].innerHTML;
+        let contentForSearch = content.toLowerCase();
+        
+        // for(let i = contentForSearch.indexOf(key); i < contentForSearch.length; i += key.length){
+        //   if(map[map.length - 1] != contentForSearch.indexOf(key, i) && contentForSearch.indexOf(key, i) != -1){
+        //     map.push(contentForSearch.indexOf(key, i));
+        //   }
+        // }
+
+        // for(idx in map){
+        //   console.log(content.substr(idx, key.length))
+        // }
+        
+        content = content.replaceAll(`${key}`, `<span style="background-color: gold;">${key}</span>`);
+
+        document.getElementsByTagName("p")[0].innerHTML = content;
+        // map);
+      }
+
+      // document.getElementById("search").onclick = function () {
+      //   let key = (document.getElementById("input").value).toLowerCase();
+      //   let content = document.getElementsByTagName("p")[0].innerHTML;
+      //   content = content.toLowerCase();
+      //   content = content.replaceAll(`${key}`, `<span style="background-color: gold;">${key}</span>`);
+
+      //   document.getElementsByTagName("p")[0].innerHTML = content;
+      // }
+    }
+    // 變數型態分為存量型與非存量型
+    // a = NaN - 20;
+    // console.log(isNaN(a));
+    // let b = 3.2;
+    // console.log(b%1 != 0);
+    // c = '';
+    // console.log(typeof c);
+    // console.log(Boolean(NaN));
+    // JavaScript 為推論型態，運算數字時會先將運算元轉換成小樹再進行運算
+    // w = 10 / 3;
+    // console.log(w);
+
+    // let b = new Int32Array([9, 5, 10, 111]); //JS沒有負索引
+    // for(let i = 0; i < b.length; i++){
+    //   console.log(b[i]);
+    // }
+
+    // for(a in b){
+    //   console.log(b[a]);
+    // }
+
+    // for(c of b){
+    //   console.log(c);
+    // }
+
+    // b.forEach(el => {
+    //   console.log(el);
+    // });
+
+    // b = b.sort() ;
+    // b = b.reverse();
+
+    // console.log(b);
+    // console.log(b.sort());
+    // console.log(b.reverse(b.sort()));
+
+    // let arr = [1, 2, 3, 4, 5];
+    // console.log(arr.slice(1,3));
+    // console.log(arr.slice(2));
+    // console.log(arr.slice(-3,-1));
+    // console.log(arr.slice(-2));
+
+    // console.log(random);
+    // let n1 = '';
+    // let n2 = '';
+    // let tem = '';
+    // for (let i = 0; i < 20; i++) {
+    //   let random1 = Math.floor(Math.random() * arr.length);
+    //   let random2 = Math.floor(Math.random() * arr.length);
+    //   tem = arr[random1];
+    //   arr[random1] = arr[random2];
+    //   arr[random2] = tem;
+    // }
+    // console.log(arr);
+    // entity: &nbsp;在HTML中等於1個空白
+  </script>
+</body>
+
+</html>

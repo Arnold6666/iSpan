@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let text = '';
+    window.onload = function () {
+      for (let i = 1; i < 5; i++) {
+
+        if (i == 1) {
+          text = text + `<p>*</p>`
+        } else if (i == 2) {
+          text = text + `<p>**</p>`
+        } else if (i == 3) {
+          text = text + `<p>***</p>`
+        } else if (i == 4) {
+          text = text + `<p>****</p>`
+          for (let j = 3; j > 0; j--) {
+            if (j == 1) {
+              text = text + `<p>*</p>`
+            } else if (j == 2) {
+              text = text + `<p>**</p>`
+            } else if (j == 3) {
+              text = text + `<p>***</p>`
+            }
+          }
+        }
+      }
+      document.body.innerHTML = text;
+    }
+
+  </script>
+</body>
+
+</html>
