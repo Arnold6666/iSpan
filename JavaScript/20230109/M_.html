@@ -27,25 +27,32 @@
       // let s = "Hello, \n<br>World!"
       // document.getElementById('test').innerHTML = s;
       let map =[];
+      let contentOri = document.getElementsByTagName("p")[0].innerHTML;
+
       document.getElementById("input").onkeyup = function () {
         let key = (document.getElementById("input").value).toLowerCase();
-        let content = document.getElementsByTagName("p")[0].innerHTML;
-        let contentForSearch = content.toLowerCase();
+        let contentForSearch = contentOri.toLowerCase();
+        let content = contentOri;
         
-        // for(let i = contentForSearch.indexOf(key); i < contentForSearch.length; i += key.length){
-        //   if(map[map.length - 1] != contentForSearch.indexOf(key, i) && contentForSearch.indexOf(key, i) != -1){
-        //     map.push(contentForSearch.indexOf(key, i));
-        //   }
-        // }
-
-        // for(idx in map){
-        //   console.log(content.substr(idx, key.length))
+        // for(idx of map){
+        //   console.log(contentOri[idx, key.length]);
         // }
         
-        content = content.replaceAll(`${key}`, `<span style="background-color: gold;">${key}</span>`);
+        if(key.length > 0 ){
+          content = content.replaceAll(`${key}`, `<span>${key}</span>`);
+          document.getElementsByTagName("p")[0].innerHTML = content;
+          for(let i = contentForSearch.indexOf(key); i < contentForSearch.length; i += key.length){
+          if(map[map.length - 1] != contentForSearch.indexOf(key, i) && contentForSearch.indexOf(key, i) != -1){
+            map.push(contentForSearch.indexOf(key, i));
+          }
 
-        document.getElementsByTagName("p")[0].innerHTML = content;
-        // map);
+        }
+        }else{
+          document.getElementsByTagName("p")[0].innerHTML = contentOri;
+        }
+        // document.getElementsByTagName("p")[0].innerHTML = content;
+        // console.log(map);
+        map = [];
       }
 
       // document.getElementById("search").onclick = function () {
