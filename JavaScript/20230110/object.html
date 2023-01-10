@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var person = {
+      firstName: "David",
+      lastName: "Wang",
+      age: 30,
+      name: function () {
+        return this.firstName + " " + this.lastName;
+      }
+    }
+
+    // 物件中的set與get一定是函數，可將所需要的函數加工後再得出
+    var magicNumber = {
+      set value(newValue) {
+        this._value = newValue; //加上底線通常表示為該函示內部使用
+      },
+
+      get value() {
+        return this._value * 2
+      }
+    }
+
+    // magicNumber.value = 40;
+
+    // console.log(magicNumber.value);
+
+    // JSON內的Key 一定要雙引號包覆 key不能重複，只能為字串
+    // JSON資料需要parser(解析)
+    // jsonSting = `[
+    //   {
+    //     "name": "David",
+    //     "age": 30,
+    //     "address": null,
+    //     "tel": {
+    //       "home": "1111",
+    //       "mobile": "2222"
+    //     }, 
+    //     "children": ["Betty", "Tom"]
+    //   },
+    //   {
+    //     "name": "Mei",
+    //     "age": 23,
+    //   }
+    // ]`
+
+    jsonSting = `
+      [
+        {
+          "name": "David",
+          "age": 30,
+          "address": null,
+          "tel": {
+            "home": "1111",
+            "mobile": "2222"
+          }, 
+          "children": ["Betty", "Tom"]
+        },
+        {
+          "name": "Mei",
+          "age": 30,
+          "address": null,
+          "tel": {
+            "home": "1111",
+            "mobile": "2222"
+          }, 
+          "children": ["Betty", "Tom"]
+        }
+      ]
+    `;
+
+    jsonArray = JSON.parse(jsonSting);
+    // for (data of jsonArray) {
+    //   console.log(data.name)
+    //   console.log(data.age)
+    // }
+
+    // Map的key不一定為字串，不重複即可
+    var a = new Map([
+      ["name", "David"],
+      ["age", 30],
+      ["tel", "1111"]
+    ])
+    console.log(a.get("name"));
+    a.set("address", "台中市");
+    console.log(a.get("address"));
+    console.log(a.size);
+  </script>
+</body>
+
+</html>

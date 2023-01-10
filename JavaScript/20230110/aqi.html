@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table{
+      margin: 0 auto;
+      border: 2px solid black;
+      border-collapse: collapse;
+      text-align: center;
+    }
+    table td{
+      width: 200px;
+      /* height: 40px; */
+    }
+    p{
+      text-align: center;
+    }
+  </style>
+  <script src="aqi.js"></script>
+  <script>
+    window.onload = function(){
+      // var jsonString = getJSON();
+      var jsonObj = JSON.parse(jsonString);
+      var data = jsonObj.records;
+      var content = document.getElementById("data");
+
+      var table = "";
+      var tr ="";
+      // console.log(data[0].sitename);
+      for(let i = 0; i < data.length; i++){
+        tr = `${tr}<tr>
+            <td>${data[i].sitename}</td>
+            <td>${data[i].county}</td>
+            <td>${data[i].aqi}</td>
+            <td>${data[i].status}</td>
+          </tr>`
+        // console.log(data[i].sitename)
+      }
+      table = `
+        <table border="1">
+          <tr>
+            <th>地點</th>
+            <th>縣市</th>
+            <th>空氣品質指標</th>
+            <th>空氣品質分級</th>
+          </tr>
+          ${tr}
+        </table>`
+      content.innerHTML = table;
+      document.getElementById("time").innerHTML = `更新為間為：${data[0].publishtime}`;
+    }
+  </script>
+</head>
+<body >
+  <p id="time"></p>
+  <div id="data">
+    
+  </div>
+  <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+  </canvas>
+</body>
+</html>
