@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="data.js"></script>
+  <script>
+    window.onload = function(){
+      var data = JSON.parse(jsonString)
+      console.log(jsonString);
+
+      let div = document.getElementById("demo")
+      let table = document.createElement("table")
+      table.style.borderCollapse = "collapse"
+      table.style.fontSize = "2rem"
+      table.style.margin = "0 auto"
+      table.style.width = "800px"
+      table.style.textAlign = "center"
+      table.setAttribute("border", "1")
+
+      div.appendChild(table)
+      // console.log(data[0].title);
+      let row = table.insertRow();
+      row.insertCell().innerHTML = "項目"
+      row.insertCell().innerHTML = `<span style="color:blue">冷</span>/<span style="color:red">熱</span>`
+      row.insertCell().innerHTML = "價格"
+      row.insertCell().innerHTML = "店長推薦"
+
+      for(i = 0; i < data.length; i++){
+        let row = table.insertRow();
+        let td1 = row.insertCell();
+        let td2 = row.insertCell();
+        let td3 = row.insertCell();
+        let td4 = row.insertCell();
+
+        
+
+
+        td1.innerHTML = data[i].title;
+
+        let type = data[i].type
+        if(type.search("iced") >= 0 && type.search("hot") >= 0){
+          td2.innerHTML = `<span style="color:blue">冷</span>/<span style="color:red">熱</span>`
+        }else if(type.search("iced") >= 0){
+          td2.innerHTML = `<span style="color:blue">冷</span>`
+        }else{
+          td2.innerHTML = `<span style="color:red">熱</span>`
+        }
+        // td2.innerHTML = data[i].type
+
+        td3.innerHTML = data[i].price;
+
+        if(data[i].popularity == true){
+          td4.innerHTML = "★";
+        }else{
+          td4.innerHTML = "";
+        }
+        
+      }
+
+    }
+  </script>
+</head>
+<body>
+  <div id="demo">
+
+  </div>
+</body>
+</html>

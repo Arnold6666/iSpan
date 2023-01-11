@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+  <script>
+    window.onload = () => {
+      let data = [["A", "B"],["C","D"]]
+      let div = document.getElementById("demo")
+      let table = document.createElement("table")
+      table.style.border="1px solid"
+      div.appendChild(table)
+
+      for(let i = 0; i < 2; i++){
+        let row = table.insertRow()
+        let cell1 = row.insertCell()
+        let cell2 = row.insertCell()
+        cell1.innerHTML = data[i][0]
+        cell2.innerHTML = data[i][1]
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="demo"></div>
+</body>
+</html>

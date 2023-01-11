@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let i = 10;
+    
+    // call by value 存量變數特性，僅將其值傳入，因此修改無反應
+    function f(i){
+      i = 20;
+    }
+
+    function ff(){
+      let i = 20;
+    }
+
+    // console.log(i)
+    // f(i);
+    // console.log()
+
+
+    var arr = [i]
+    // call-by-address(sharing/object/name/reference) 非存量變數，如陣列與物件，在傳遞進function時為本身傳入
+    function m(a){
+      a[0] = 20
+    }
+
+    // console.log(arr);
+    // m(arr)
+    // console.log(arr);
+
+    function f1(){
+      setTimeout("f2()",3000) //非同步呼叫
+      console.log("Hello world!")
+    }
+
+    function f2() {
+      console.log("晚幾秒出現")
+    }
+
+    // f1();
+
+    var a = function(str){
+      console.log(str);
+      return 10;
+    }
+
+    // i = a("hello world");
+
+    // console.log(i)
+
+    function g(x, complete){
+      let result = x()
+      complete(result);
+      return x()
+    }
+
+    // var a = function(){
+    //   console.log("hello")
+    // }
+
+    // 傳進參數內容為一個匿名函數function，此語法稱為 closure/閉包，且此函數不可以帶參數
+    // g(function(){
+      // console.log("hello world")
+    // })
+
+    // s = g(function(){
+    //   return "hello"
+    // })
+
+    // closure的最經典架構
+    g( 
+      () => 5 + 6, 
+      (result) => {
+        alert(result)
+      }
+    ) 
+
+    g( 
+      function(){
+        return 5 + 6
+      }, 
+      function(result){
+        alert(result)
+      }
+    ) 
+
+    // console.log(s)
+    
+  </script>
+</body>
+</html>

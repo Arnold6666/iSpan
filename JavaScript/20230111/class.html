@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+</head>
+<body>
+  <script>
+
+    // JavaScript 的類別只有 public 與 privated(#) 存取等級，沒有Protected
+    // 大型專案中，通常偷過透過存取等級限制修改權限，避免重要變數被修改
+    class Person{
+      // 初始化函數，建立實體後便會執行，
+      #man = "a human"; //無法被繼承
+      constructor(name, high, hairColor){
+        this.name = name
+        this.high = high
+        this.hairColor = hairColor
+      }
+
+      // class內的函數建立時不能帶有關鍵字function
+      sendMail(){
+        console.log(this.name + `去寄信了`)
+      }
+    }
+
+    // 現在兩類別的關係為，Person 為 Student 的父類別，Student 為 Person 的子類別
+    class Student extends Person{
+      #origin_score; 
+      static shared = new Student();
+      constructor(){
+        this.text = "hello"
+      }
+      constructor(name, high, hairColor, score){
+        super(name, high, hairColor); //透過super繼承父類別的屬姓
+        this.#origin_score = score;
+      }
+
+      // 因 origin_score 加上#變成私有變數，外部無法訪問，僅能透過function存取
+      getScore(){
+        return this.#origin_score;
+      }
+
+      static school = 'AAA'
+    }
+
+    let david = new Person('David', 160, 'black');
+    // console.log(david.hairColor)
+    // david.sendMail()
+    // david.weight = 87
+    // console.log(Person);
+    
+    let mei = new Student('Mei', 155, "blue", 87);
+    console.log(mei.origin_score)
+    console.log(mei.getScore())
+    // console.log(Student);
+    console.log(mei.school)
+    // 物件導向的特性：封裝、繼承、抽象、多型
+    var test = Student.shared;
+    console.log(test.test)
+  </script>
+</body>
+</html>

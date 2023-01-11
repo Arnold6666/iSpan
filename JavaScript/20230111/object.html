@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  輸入數字1：<input type="number" id="num1"><br>
+  輸入數字2：<input type="number" id="num2"><br>
+  運算子選擇：<select name="" id="how">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select><br>
+  <button id="btn">運算</button>
+  <p id="result"></p>
+  <script>
+    // JavaScript的Function即物件
+    // 物件第一個字通常會大寫，將funciton當作物件時，內部只能置放匿名函數
+    function Person(name, high, hairColor) {
+      this.name = name
+      this.high = high
+      this.hairColor = hairColor
+      this.sendMail = function () {
+        console.log(this.name + '去寄信')
+      }
+    }
+
+    // new 物件：物件實體(初始)化，物件內的變數專有名詞為屬性(property)，內的funciton叫做方法(method)，透過物件可以讓程式碼結構更清晰，
+    let david = new Person("David", 160, 'black');
+    let tom = new Person("Tom", 170, 'brown');
+
+    // david.hairColor = "green"
+
+    // console.log("David's hair color is " + david.hairColor)
+    // console.log("Tom's hair color is " + tom.hairColor)
+    // david.sendMail();
+
+    // // 動態語言特性可以隨時加入
+    // david.weight = 70
+    // console.log(david.weight)
+
+    function Student(name, high, hairColor, score) {
+      Person.call(this, name, high, hairColor)
+      this.score = score;
+      this.getScore = function () {
+        console.log(this.name + ' 的成績為 ' + this.score);
+      }
+    }
+
+    let mei = new Student('Mei', 160, 'red', 90)
+    // console.log(mei.name + ' 的成績為 ' + mei.score);
+    // mei.getScore();
+    function arithmetic(num1, num2, arg){
+      let n1 = parseFloat(num1);
+      let n2 = parseFloat(num2);
+      let result = document.getElementById("result");
+      if (arg == "+") {
+        result.innerHTML = `${n1 + n2}`;
+      } else if (arg == "-") {
+        result.innerHTML = `${n1 - n2}`;
+      } else if (arg == "*") {
+        result.innerHTML = `${n1 * n2}`;
+      } else if (arg == "/") {
+        result.innerHTML = `${n1 / n2}`;
+      } else {
+        result.innerHTML = "please enter number"
+      }
+    }
+
+
+    // console.log(how);
+    document.getElementById('btn').onclick = function() {
+      let num1 = document.getElementById("num1").value;
+      let num2 = document.getElementById("num2").value;
+      let how = document.getElementById("how").value;
+      arithmetic(num1, num2, how);
+
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    class MyMath{
+      static shared = new MyMath()
+      add(a,b){
+        return a + b;
+      }
+    }
+
+    // let m = new MyMath()
+
+    // function f1(){
+    //   let m = MyMath.shared;
+    //   console.log(m.add(5, 3))
+    // }
+
+    // function f2(){
+    //   let x = MyMath.shared;
+    //   console.log(x.add(4, 2))
+    // }
+    
+    // f1()
+    // f2()
+    // 以上兩函數內的m,x為單例(singleton)，但仍為同步運行
+    
+    function f1(){
+      let m = MyMath.shared; //物件後接一個property為單例特徵
+      console.log(m.add(5, 3))
+    }
+
+    function f2(){
+      let x = MyMath();
+      console.log(x.add(4, 2))
+    }
+    f1();
+    setTimeout("f2()", 0);
+
+    // m為單例，x為實例，透過setTimeout非同步運行。
+
+    // console.log(m.add(5, 3))
+  </script>
+</body>
+</html>

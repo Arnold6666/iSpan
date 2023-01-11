@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supply</title>
+</head>
+<body>
+  <script>
+    class Fruit{
+      constructor(title, sweet, season){
+        this.title = title
+        this.sweet = sweet
+        this.season = season
+      }
+    }
+
+    let fruits = [
+      new Fruit("香蕉", 10, "春"),
+      new Fruit("芭樂", 8, "夏"),
+      new Fruit("釋迦", 22, "秋"),
+      new Fruit("鳳梨", 15, "冬"),
+    ]
+
+    fruits.sort((a, b) => a.sweet - b.sweet )
+    console.log(fruits);
+  </script>
+</body>
+</html>
