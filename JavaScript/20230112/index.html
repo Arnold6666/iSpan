@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // console.log(navigator.userAgent)
+
+    // let mystring = "abcdedgAB";
+    // console.log(mystring.match(/ab/i))
+
+    var mobile = ["Android", "Mobi", "iPhone"];
+    let isMobile = false;
+    function detectmob() {
+      for (i = 0; i < mobile.length; i++) {
+        if (navigator.userAgent.match(mobile[i])) {
+          isMobile =  true
+        }
+      }
+      return isMobile;
+    }
+
+    // console.log(detectmob());
+
+
+    // if (navigator.userAgent.match(/Android/gi)
+    //     || navigator.userAgent.match(/webOS/gi)
+    //     || navigator.userAgent.match(/iPhone/gi)
+    //     || navigator.userAgent.match(/iPad/gi)
+    //     || navigator.userAgent.match(/iPod/gi)
+    //     || navigator.userAgent.match(/BlackBerry/gi)
+    //     || navigator.userAgent.match(/Windows Phone/gi)
+    
+    function detectmob() {
+      if (navigator.userAgent.match(/iPhone/gi)
+      ) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
+
+    window.onload = function () {
+      document.getElementsByTagName("li")[0].onclick = function () {
+        console.log(detectmob())
+        if (detectmob()) {
+          window.open("https://www.google.com.tw/")
+        } else {
+          window.open("https://www.books.com.tw/")
+        }
+      }
+    }
+
+  </script>
+</head>
+
+<body>
+  <li>detect your device</li>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .highlight {
+      background-color: lightblue;
+    }
+  </style>
+  <script>
+    function caseSensitive() {
+      text = document.getElementById("test").innerHTML;
+      document.getElementById("search").onkeyup = function () {
+        str = document.getElementById("search").value;
+        if (str.length > 0) {
+          new_text = text.replaceAll(str, `<span class="highlight">${str}</span>`)
+          document.getElementById("test").innerHTML = new_text;
+        } else {
+          document.getElementById("test").innerHTML = text;
+        }
+
+      }
+    }
+
+    function inCaseSensitive() {
+      text = document.getElementById("test").innerHTML;
+      document.getElementById("search").onkeyup = function () {
+        search = document.getElementById("search").value.toLowerCase();
+        new_text = text;
+        if (search !== "") {
+          lowertext = new_text.toLowerCase();
+          index = lowertext.indexOf(search);
+          while (index != -1) {
+            firstPart = new_text.substr(0, index); // 使用原本文章內容找 並將關鍵字與其前後切成三個部分
+            secondPart = new_text.substr(index, search.length);
+            thirdPart = new_text.substr(index + search.length);
+
+            new_text = firstPart + '<span class="highlight">' + secondPart + '</span>' + thirdPart; // 將關鍵字前後加上span標籤
+            lowertext = new_text.toLowerCase(); // 使下一次迴圈搜尋的格式正確
+            index = lowertext.indexOf(search, index + search.length + 31); //使下一次的index位置加上span標籤長度
+          }
+        }
+        document.getElementById("test").innerHTML = new_text; //文章恢復原樣
+      }
+    }
+
+    window.onload = function () {
+      caseSensitive();
+    }
+  </script>
+</head>
+
+<body>
+  <input type="text" id="search">
+  <div id="test">Editor's Note — Sign up for Unlocking the World, CNN Travel's weekly newsletter. Get news about
+    destinations opening, inspiration for future adventures, plus the latest in aviation, food and drink, where to stay
+    and other travel developments.
+    (CNN) — Xiongjie Dai, a freelance software engineer living in the Chinese city of Suzhou, dreams about his first big
+    trip post-Covid-19.</div>
+</body>
+
+</html>

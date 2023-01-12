@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button>open</button>
+  <button>close</button>
+  <button>href</button>
+  <script>
+    function gotoGoogleMap() {
+      location.href = "https://www.google.com.tw/maps/";
+    }
+    
+    window.onload = function () {
+      var w
+      document.getElementsByTagName("button")[0].onclick = function () {
+        parent.c0.window.test();
+        // console.log(parent.c2)
+      }
+
+
+      // document.getElementsByTagName("button")[0].onclick = function () {
+      //   w = window.open("https://www.google.com.tw/?hl=zh_TW")
+      // }
+      // document.getElementsByTagName("button")[1].onclick = function () {
+      //   w.close();
+      // }
+
+      // document.getElementsByTagName("button")[2].onclick = function () {
+
+      //   setTimeout("{location.href = 'https://www.google.com.tw/maps/'}", 5000)
+      // }
+    }
+  </script>
+</body>
+
+</html>
