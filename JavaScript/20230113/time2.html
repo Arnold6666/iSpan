@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .opacity {
+      opacity: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    var str = Date(); // 為字串 
+
+    var strN = new Date();
+
+
+    window.onload = function () {
+      let clock = document.getElementById("demo");
+      let time = new Date();
+      document.getElementById("year").innerHTML   = time.getFullYear();
+      document.getElementById("month").innerHTML  = time.getMonth();
+      document.getElementById("day").innerHTML    = time.getDate();
+      document.getElementById("hour").innerHTML   = time.getHours();
+      document.getElementById("minute").innerHTML = time.getMinutes();
+      document.getElementById("second").innerHTML = time.getSeconds();
+
+
+
+      setInterval(function () {
+        document.getElementById("year").innerHTML   = new Date().getFullYear();
+        document.getElementById("month").innerHTML  = new Date().getMonth();
+        document.getElementById("day").innerHTML    = new Date().getDate();
+        document.getElementById("hour").innerHTML   = new Date().getHours();
+        document.getElementById("minute").innerHTML = new Date().getMinutes();
+        document.getElementById("second").innerHTML = new Date().getSeconds();
+
+        let spilt = document.getElementById("spilt");
+        let a = spilt.className
+        
+        a = (a == "opacity") ? spilt.setAttribute("class", "") : spilt.setAttribute("class", "opacity");
+
+      }, 1000);
+
+    }
+  </script>
+  <div id="demo">
+    <span id="year"></span>年
+    <span id="month"></span>月
+    <span id="day"></span>日
+    <span id="hour"></span>點
+
+    <span style="background-color: rgb(189, 189, 189); padding: 0 10px;">
+      <span id="minute"></span>
+      <span id="spilt" class="opacity">:</span>
+      <span id="second"></span>
+    </span>
+
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // function f1(){
+    //   for(let i = 0; i < 50000; i++){
+    //     for(let j = 0; j < 50000; j++){
+
+    //     }
+    //   }
+    // }
+
+    // function f2(){
+    //   for(let i = 0; i < 50000; i++){
+    //     for(let j = 0; j < 50000; j++){
+          
+    //     }
+    //   }
+    // }
+
+    function go(){
+      let start_time = Date.now()
+      let worker1 = new Worker('worker.js');
+      
+      worker1.onmessage = function(event){
+        console.log(event.data)
+        document.getElementById("a").innerHTML = Date.now() - start_time;
+      }
+      
+      worker1.postMessage("go");
+      
+      let worker2 = new Worker('worker.js');
+      worker2.onmessage = function(event){
+        console.log(event.data)
+        document.getElementById("b").innerHTML = Date.now() - start_time;
+      }
+
+      worker2.postMessage("go");
+
+      let worker3 = new Worker('worker.js');
+      worker3.onmessage = function(event){
+        console.log(event.data)
+        document.getElementById("c").innerHTML = Date.now() - start_time;
+      }
+
+      worker3.postMessage("go");
+    }
+  </script>
+  
+</head>
+<body>
+  <!-- worker -->
+  <button onclick="go()">click</button>
+  <div id="a">0</div>
+  <div id="b">0</div>
+  <div id="c">0</div>
+</body>
+</html>

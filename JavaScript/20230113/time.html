@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var str = Date(); // 為字串 
+    // console.log(str);
+
+    var strN = new Date();
+    // document.write(strN)
+
+    window.onload = function () {
+      let clock = document.getElementById("demo");
+      let time = new Date().toLocaleString();
+      time = time.replace("/", ` 年 `);
+      time = time.replace("/", ` 月 `);
+      time = time.replace(":", ` 分 `);
+      time = time.replace(":", ` 秒 `);
+      // console.log(time.substr(0, 13) + ` 日 ` + time.substr(14, 11))
+      clock.innerHTML = time;
+      time = time.substr(0, 13) + ` 日 ` + time.substr(14, 11);
+
+      // console.log(new Date().toLocaleString())
+
+      setInterval(function(){
+        let time2 = new Date().toLocaleString();
+        time2 = time2.replace("/", ` 年 `);
+        time2 = time2.replace("/", ` 月 `);
+        time2 = time2.replace(":", ` 點 `);
+        time2 = time2.replace(":", ` 分 `);
+        time2 = time2.substr(0, 13) + ` 日 ` + time2.substr(14, 11);
+        clock.innerHTML = time2;
+      }, 1000);
+
+    }
+    // var d = new Date(2018, 11, 24, 10, 33);
+    // console.log(d);
+    // document.getElementById("demo").innerHTML = `${d}`;
+  </script>
+  <div id="demo"></div>
+  <!-- <div id="demo2"></div> -->
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+
+    function saveCookie(){
+      let d = new Date();
+      d.setTime(d.getTime() + 20_000);
+      document.cookie = "name=David; expires=" + d.toGMTString();
+      document.cookie = "age=30; expires=" + d.toGMTString();
+    }
+
+    function loadCookie(){
+      let cookie = document.cookie;
+      alert(cookie);
+    }
+
+    function localstorageSave(){
+      localStorage.setItem("name","Mei")
+      localStorage.setItem("age", 24)
+    }
+
+    function localstorageLoad(){
+      let name = localStorage.getItem("name");
+      let age = localStorage.getItem("age");
+      alert(name + "," + age);
+    }
+  </script>
+</head>
+<body>
+  <!-- cookie只能存字串資料，且必須設定有效期限，刪除透過重新設定期時間為過去時間即可刪除 -->
+  <button onclick="saveCookie()">save</button>
+  <button onclick="loadCookie()">load</button>
+  <br>
+  <!-- localstorage儲存的資料在本地端，無有效期限，不刪除便會一直存在重開機也是 -->
+  <button onclick="localstorageSave()">localStorage save</button>
+  <button onclick="localstorageLoad()">localStorage load</button>
+
+  <!-- sessionStorage 儲存在記憶體，關機後便刪除 -->
+</body>
+</html>

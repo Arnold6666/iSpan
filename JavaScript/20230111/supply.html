@@ -17,13 +17,29 @@
     }
 
     let fruits = [
+      new Fruit("鳳梨", 15, "冬"),
       new Fruit("香蕉", 10, "春"),
       new Fruit("芭樂", 8, "夏"),
       new Fruit("釋迦", 22, "秋"),
-      new Fruit("鳳梨", 15, "冬"),
     ]
 
-    fruits.sort((a, b) => a.sweet - b.sweet )
+    // fruits.sort((a, b) => a.sweet - b.sweet )
+    // fruits.sort((a, b) => {
+    //   // console.log(a);
+    //   console.log(b);
+    //   return 0;
+    // } )
+    fruits.sort((a, b) =>{
+      if(a.season == "春" && b.season != "春"){
+        return -1;
+      }else if(a.season == "夏" && b.season != "夏"){
+        return -1;
+      }else if(a.season == "秋" && b.season != "秋"){
+        return -1;
+      }
+    })
+
+
     console.log(fruits);
   </script>
 </body>

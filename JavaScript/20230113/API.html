@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.onload = function(){
+      document.getElementById("btn").onclick = function(){
+        // 命令式語法
+        fetch("backend.php")
+          .then((response) => {
+            return response.json();
+          })
+          .then((obj) => {
+            let text = document.getElementById("text").value;
+            let records = obj['records']
+            let data = records.find(function(el){
+              return el.sitename == text
+            })
+            // console.log(obj['records'][0]);
+            document.getElementById("test").innerHTML = `${data.county}${data.sitename}: ${data.aqi}`;
+          })
+      }
+    }
+  </script>
+</head>
+<body>
+  <input id="text">
+  <button id="btn">click</button>
+  <hr>
+  <div id="test"></div>
+  <!-- 透過Iframe開啟的新網頁，無法與parent共享Css等其他設定， -->
+  <!-- 網頁讀取時
+    第一次發送https request僅有文字資料response
+    後續的多次request才會處理圖片、影片等其他
+
+    因此window.onload為第一次request且respone後進行，因此若在其內的程式碼包含取得特定圖片或影片，會失效，
+
+    其他如img也具有onload的function
+   -->
+</body>
+</html>
