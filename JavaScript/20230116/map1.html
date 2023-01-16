@@ -1,0 +1,113 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Place Details</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+  <!-- <link rel="stylesheet" type="text/css" href="./style.css" /> -->
+  <style>
+    /* 
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map. 
+ */
+    #map {
+      height: 80%;
+    }
+
+    /* 
+ * Optional: Makes the sample page fill the window. 
+ */
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <script>
+    function Location(title, lat, lng) {
+      this.title = title;
+      this.lat = lat;
+      this.lng = lng;
+      this.center = { lat: lat, lng: lng };
+    }
+
+    const landmarks = new Map([
+      ["uluru", new Location("Uluru", -25.344, 131.031)],
+      ["taipei", new Location("Taipei", 25.034, 121.562)],
+      ["amsterdam", new Location("Amsterdam", 52.379, 4.899)],
+      ["alabur", new Location("Alabur", 41.18739763689696, 80.2759279618499 )]
+    ])
+
+    window.onload = function () {
+      document.querySelectorAll("button").forEach((bn) => {
+        bn.onclick = function () {
+          let landmark = landmarks.get(this.innerHTML.toLowerCase());
+          map.panTo(landmark.center);
+          marker.setPosition(landmark.center);
+          marker.setTitle(landmark.title);
+          infowindow.setContent(landmark.title);
+        }
+      })
+    }
+
+    console.log(landmarks);
+
+    let map;
+    let marker;
+    let infowindow;
+
+    function initMap() {
+
+      let landmark = landmarks.get("amsterdam")
+
+      // let center = { lat: 25.034212989135998, lng: 121.56401856683415 }
+      map = new google.maps.Map(document.getElementById("map"), {
+        center: landmark.center,
+        zoom: 4,
+      });
+
+      marker = new google.maps.Marker({
+        position: landmark.center,
+        map: map,
+        title: landmark.title
+      })
+
+      infowindow = new google.maps.InfoWindow({
+        content: marker.getTitle()
+      })
+
+      marker.addListener("click", function () {
+        infowindow.open({
+          anchor: marker,
+          map
+        })
+      })
+    }
+
+    window.initMap = initMap;
+  </script>
+</head>
+
+<body>
+  <div id="map"></div>
+  <p>
+    <button>Uluru</button>
+    <button>Taipei</button>
+    <button>Amsterdam</button>
+    <button>Alabur</button>
+  </p>
+
+  <!-- 
+    The `defer` attribute causes the callback to execute after the full HTML
+      document has been parsed. For non-blocking uses, avoiding race conditions,
+      and consistent behavior across browsers, consider loading using Promises
+      with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+      -->
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyXOpDgS5QmETSDFK4jdpCRq3UGRSYB2g&callback=initMap&libraries=places&v=weekly"
+    defer></script>
+</body>
+
+</html>

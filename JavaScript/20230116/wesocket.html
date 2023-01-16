@@ -1,0 +1,108 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.1.0/paho-mqtt.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
+  <script type="text/javascript">
+
+    // Create a client instance
+    // client = new Paho.MQTT.Client("host", port,"client_id");
+    client = new Paho.MQTT.Client("localhost", 9001, "web_" + parseInt(Math.random() * 100, 10));
+
+    // set callback handlers
+    client.onConnectionLost = onConnectionLost;
+    client.onMessageArrived = onMessageArrived;
+    var options = {
+      useSSL: false,
+      userName: "username",
+      password: "password",
+      onSuccess: onConnect,
+      onFailure: doFail
+    }
+    // console.log(options.onSuccess)
+
+    // connect the client
+    client.connect(options);
+
+    // called when the client connects
+    function onConnect() {
+      // Once a connection has been made, make a subscription and send a message.
+      console.log("onConnect");
+      // client.subscribe("/cloudmqtt");
+      // message = new Paho.MQTT.Message("Hello CloudMQTT");
+      // message.destinationName = "/cloudmqtt";
+      // client.send(message);
+    }
+
+    function doFail(e) {
+      console.log(e);
+    }
+
+    // called when the client loses its connection
+    function onConnectionLost(responseObject) {
+      if (responseObject.errorCode !== 0) {
+        console.log("onConnectionLost:" + responseObject.errorMessage);
+      }
+    }
+
+    // called when a message arrives
+    function onMessageArrived(message) {
+      console.log("onMessageArrived:" + message.payloadString);
+      let text = document.getElementById("textarea").innerHTML;
+      text += message.payloadString + "\n"; 
+      document.getElementById("textarea").innerHTML = text;
+
+      let el = document.getElementById("textarea");
+      el.scrollTop = el.scrollHeight
+    }
+
+    window.onload = function () {
+      document.getElementById("subscribe").onclick = function () {
+        this.setAttribute("disabled", ""); //設定屬性需要兩個參數
+        document.getElementById("unsubscribe").removeAttribute("disabled"); //移除屬性
+        let topic = document.getElementById("topic").value;
+        client.subscribe(topic);
+      }
+
+      document.getElementById("unsubscribe").onclick = function () {
+        this.setAttribute("disabled", ""); //設定屬性需要兩個參數
+        document.getElementById("subscribe").removeAttribute("disabled"); //移除屬性
+        let topic = document.getElementById("topic").value;
+        client.unsubscribe(topic);
+      }
+
+      document.getElementById("send").onclick = function () {
+        let to = document.getElementById("to").value;
+        let msg = document.getElementById("message").value;
+
+        message = new Paho.MQTT.Message(msg);
+        message.destinationName = to;
+        client.send(message);
+        document.getElementById("message").value = ""
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <!-- MQTT 通常用來進行物聯網的開發，websocket通常會使用 其他的套件開發 -->
+  <p>
+    <input type="text" id="topic" placeholder="name">
+    <button id="subscribe">subscribe</button>
+    <button id="unsubscribe" disabled>unsubscribe</button>
+  </p>
+  <p>
+    <textarea id="textarea" style="width: 500px; height:200px; resize: none;" readonly></textarea>
+  </p>
+  <p>
+    <label>To: </label>
+    <input type="text" id="to" style="width: 80px;">
+  </p>
+  <p>
+    <input id="message" placeholder="message" style="width: 400px;">
+    <button id="send">send</button>
+  </p>
+</body>
+
+</html>

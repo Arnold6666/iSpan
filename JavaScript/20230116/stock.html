@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+
+<body>
+  <input type="number" id="stockNum" placeholder="請輸入股票代碼">
+  <button id="submit">查詢</button>
+  <p>近日收盤價變化如下</p>
+  <div id="demo"></div>
+
+  <script>
+    document.getElementById("submit").onclick = function () {
+      let stockNum = document.getElementById("stockNum").value; 
+      let year = new Date().getFullYear();
+      let month = new Date().getMonth();
+      let day = new Date().getDate();
+      // year = year.toString;
+      month = month.toString;
+      day = day.toString;
+
+      console.log(typeof(year));
+      var stocks;
+      fetch(`https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=json&date=20230113&stockNo=${stockNum}`)
+        .then((res) => {
+          const data = res.json();
+          return data;
+        })
+        .then((stocks) => {
+          
+          console.log(stocks)
+          // let container = document.getElementById("demo");
+          // container.innerHTML = "";
+          // let h1 = document.createElement("h1")
+          // let title = document.createTextNode(stocks.title);
+          // container.appendChild(title)
+
+          // tenDays = stocks.data;
+          // for (price of tenDays) {
+          //   let p = document.createElement("p");
+          //   let content = document.createTextNode(`${price[0]} 收盤價為：${price[1]}`)
+          //   p.appendChild(content);
+          //   container.appendChild(p);
+          // }
+        });
+        // https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=json&date=20230113&stockNo=2330
+    }
+
+  // console.log(stocks)
+  </script>
+</body>
+
+</html>
