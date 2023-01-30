@@ -1,0 +1,14 @@
+SELECT address, n FROM (
+    SELECT max(n) as max_n FROM (
+    	SELECT COUNT(*) as n FROM live GROUP BY hid) as a
+    )as aa, (
+  	SELECT hid, COUNT(*) as n FROM live GROUP BY hid    
+    )as bb, house
+WHERE aa.max_n = bb.n and bb.hid = house.hid
+	
+	
+	
+	
+	
+
+	

@@ -1,0 +1,132 @@
+SELECT q , sum(fee) as sum_Fee FROM (
+    SELECT fee, quarter(dd) as q FROM bill WHERE year(dd) = 2023
+    UNION ALL
+    SELECT 0, 1
+    UNION ALL
+    SELECT 0, 2
+    UNION ALL
+    SELECT 0, 3
+    UNION ALL
+    SELECT 0, 4
+) AS a 
+GROUP BY a.q;
+
+
+________________________________________________________________________________________
+
+Trigger 可以減少後端人為疏失，避免追蹤問題
+
+DELIMITER $$
+
+CREATE TRIGGER trigger_insert
+AFTER INSERT
+ON userinfo for each ROW
+BEGIN
+  SET @myuid = new.uid;
+  SET @mycname = new.cname;
+  set @str = concat('將 ',@myuid,' ',@mycname,' 插入到 userinfo 資料表中');
+  INSERT INTO log(body) VALUES (@str);
+END $$
+
+DELIMITER ;
+
+--------------------------------------------
+
+DROP TRIGGER IF EXISTS `trigger_delete`;CREATE DEFINER=`root`@`localhost` TRIGGER `trigger_delete` AFTER DELETE ON `userinfo` FOR EACH ROW BEGIN
+  SET @d_uid = old.uid;
+  SET @d_cname = ifnull(old.cname, '');
+  SET @d_time = now();
+  SET @d_str = concat('刪除userinfo資料表中的 ',@d_uid,' ',@d_cname,'  於 ',@d_time,'');
+  INSERT INTO log(body) VALUES(@d_str);
+END $$
+
+DELIMITER ;
+
+---------------------------------------------
+
+DELIMITER $$
+
+CREATE TRIGGER trigger_update
+AFTER UPDATE
+ON userinfo for each ROW
+BEGIN
+  SET @o_uid = old.uid;
+  SET @o_cname = ifnull(old.cname, '');
+  SET @n_uid = new.uid;
+  SET @n_cname = ifnull(new.cname, '');
+  set @str = concat('將userinfo 資料表中的',@o_uid,' ',@o_cname,' 更新為',@n_uid,' ',@n_cname,' ');
+  INSERT INTO log(body) VALUES (@str);
+END $$
+
+DELIMITER ;
+
+-----------------------------------------------
+
+若同時修改兩筆以上的pwd會中斷，其他欄位則不會
+
+DELIMITER $$;
+
+CREATE trigger trigger_test 
+before update
+on UserInfo for each row
+BEGIN
+    if @count is null THEN
+    	SET @count = 0;
+    end if;
+    
+    if new.pwd <> old.pwd THEN
+    	SET @count = @count + 1;
+    end if;
+    
+    if @count > 1 then
+	signal sqlstate '45001' set message_text = 'Stop!!';
+    end if;
+END $$;
+
+DELIMITER ;
+
+回家作業：同時修改成null會成功，同時從null修改成其他質也會成功，如何擋掉
+------------------------------------------------
+MySQL 字串與null結合為null
+
+session等級:
+	變數前要加@
+	set @n = 1 
+	SELECT @s := cname from userinfo WHERE uid = 'A01';
+
+store procedure 有回傳值
+
+參數類型： in/inout/out
+
+------------------------------------------------
+DELIMITER $$
+CREATE PROCEDURE login(myuid varchar(20), mypwd varchar(20))
+BEGIN
+
+	SELECT COUNT(*) as isLogingOK FROM userinfo WHERE uid = myuid and pwd = mypwd;
+END $$
+DELIMITER ;
+
+-------------------------
+
+drop procedure login;
+
+DELIMITER $$
+create procedure login(myuid varchar(20), mypwd varchar(20))
+begin
+    declare isLogin int default 0;
+    
+	select count(*) into isLogin from UserInfo where uid = myuid and pwd = mypwd;
+    if isLogin = 1 then
+    	select 'https://welcome.php' as url;
+    else 
+    	select 'https://fail.php' as url;
+    end if;
+end $$
+DELIMITER ;
+
+	
+
+
+
+
