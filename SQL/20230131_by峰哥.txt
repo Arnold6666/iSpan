@@ -1,0 +1,115 @@
+SHA256 目前主流
+MD5 少數還在使用
+
+成功 寫進2個欄位
+失敗 寫入null
+
+call query(....)
+uuid 成功
+uuid 失敗
+
+
+------------------------------------------------------------
+自寫版
+drop procedure login;
+
+DELIMITER $$
+create procedure login(myuid varchar(20), mypwd varchar(20))
+
+begin
+    declare isLogin int default 0;
+    
+	select count(*) into isLogin from UserInfo where uid = myuid and pwd = mypwd;
+    if isLogin = 1 then
+        set @createdate = utc_timestamp();
+        set @str = uuid();
+        update userinfo set token = @str,createdate = @createdate where uid = myuid;
+    else 
+    	set @createdate = null;
+        set @str = null;
+        update userinfo set token = @str,createdate = @createdate where uid = myuid;
+    end if;
+end
+
+---------------------------------------------------------------
+
+-----------------------------------------------------------------
+老師版 token與 時間
+drop procedure login;
+
+DELIMITER $$
+create procedure login(myuid varchar(20), mypwd varchar(20))
+begin
+    declare isLogin int default 0;
+    declare uuid char(36) default uuid();
+    
+	select count(*) into isLogin from UserInfo where uid = myuid and pwd = mypwd;
+    if isLogin = 1 then
+        update userinfo set token = uuid,createdate = unix_timestamp() where uid = myuid;
+        select 'http://welcome.php' as url, select(uuid) as token;
+    else 
+    	
+        select 'http://fail.php' as url, null as token;
+    end if;
+end $$
+DELIMITER ;
+
+//執行
+
+call login('A01','1234')
+------------------------------------------------------------------
+老師版 myprofile
+-- drop PROCEDURE myprofile;
+
+DELIMITER $$
+create PROCEDURE myprofile(uuid char(36), out status int)
+begin
+	declare ts int;
+    declare n int default 0;
+    
+    select count(*) into n from UserInfo where token = uuid;
+    if n = 0 then
+    	select null;
+        set status = 2;
+    else
+        select createdate into ts from UserInfo where token = uuid;
+        if unix_timestamp() - ts > 60 then
+            select null;
+            set status = 1;
+        else 
+            update UserInfo set createdate = unix_timestamp() where token = uuid;
+
+            select UserInfo.uid, cname, address, tel
+            from UserInfo, Live, House, Phone
+            where UserInfo.uid = Live.uid and 
+                Live.hid = House.hid AND
+                House.hid = Phone.hid AND
+                UserInfo.token = uuid;
+            set status = 0;
+        end if;
+    end if;
+END $$
+
+DELIMITER ;
+
+//執行
+
+set @status = 0;
+call myprofile('71a939cc-a118-11ed-9328-e03f4948e2ed',@status);
+SELECT @status;
+------------------------------------------------------------------
+老師版
+drop PROCEDURE logout;
+
+DELIMITER $$
+create PROCEDURE logout(uuid char(36))
+begin
+	update UserInfo set token = null, createdate = 0 where token = uuid;
+END $$
+
+DELIMITER ;
+
+//執行
+call logout('71a939cc-a118-11ed-9328-e03f4948e2ed');
+------------------------------------------------------------------
+CREATEDATE 用 INT 11 因為要用EPO TIME 方便算時間

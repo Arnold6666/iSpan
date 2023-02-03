@@ -1,0 +1,33 @@
+找網站設計其功能對應的資料庫
+
+透過前端需求來設計資料庫 
+如：註冊對應之資料表
+資料庫ER圖
+後端要求資料全部透過store procedure，且產出資料格式為JSON
+一個人兩個功能對應store procedure
+
+投影片：
+1. 前端需求
+2. ER圖
+3. store procedure 與 JSON 格式
+4. demo 操作
+
+DROP PROCEDURE `mysearch`;
+CREATE DEFINER=`rent`@`%` PROCEDURE `mysearch`(IN `mycounty` VARCHAR(20)) NOT DETERMINISTIC CONTAINS SQL SQL SECURITY DEFINER begin
+    declare result text;
+	declare isDone bool default false;
+	declare c_json text;
+	declare c cursor for select json_object ('uid',userinfo.uid ,'name', name, 'county', county, 'address', address, 'type', type, 'rent', rent, 'space', space) from userinfo,house where userinfo.uid = house.uid and county = mycounty;
+declare continue handler for not found set isDone = true;	
+
+	
+open c;
+fetch c into c_json;
+while !isDone do
+set @str = concat('{',@str,'',c_json,'}');
+
+fetch c into c_json;
+end while;
+close c;
+select (@str);
+end

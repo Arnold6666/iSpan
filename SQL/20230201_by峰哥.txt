@@ -1,0 +1,140 @@
+做function login in
+傳入 帳密
+傳出 登入結果
+
+-----------------------------------------------------
+自寫版
+
+DELIMITER $$
+create FUNCTION mylogin (myuid varchar(20),mypwd varchar(20)) RETURNs varchar(20)
+BEGIN
+declare isLogin int default 0;
+    select count(*) into isLogin from UserInfo where uid = myuid and pwd = mypwd;
+    if isLogin = 1 then
+        RETURN '成功' ;
+    else 
+    	RETURN '失敗' ;
+        end if;
+end $$
+DELIMITER;
+
+//執行
+SELECT islogin('A01','1234')
+----------------------------------------------------------
+老師版
+
+DELIMITER $$
+
+create FUNCTION islogin (myuid varchar(20),mypwd varchar(20)) RETURNs int
+BEGIN
+     declare n int default 0;
+    select count(*) into n from userinfo where uid = myuid and pwd = mypwd;
+    return n;
+end $$
+DELIMITER;
+
+//執行
+改成顯示成功或失敗的寫法(不需要改function)
+
+SELECT if(ret,'成功', '失敗') as ret
+from(
+SELECT islogin('A01','1234') as ret
+    )as a
+---------------------------------------------------------------------------
+CURSOR 類似FOR EACH迴圈 一筆一筆處裡
+平均差異(第一筆與第二筆的差異加上第二筆與第三筆的差異，再除以2
+
+---------------------------------------------------------------------------
+台中縣豐原市
+ SELECT changena('台中縣豐原市中正路72號','台中市豐原區中正路72號')
+-- SELECT changena('台中市豐原區中正路72號','台中縣豐原市中正路72號') ##### 峰哥範例
+
+
+1.將地址台中縣豐原市改為台中市豐原區
+2.將台中市的台改為臺，但台中路的台不能改
+
+未完成
+BEGIN
+    declare isDone bool default false;
+    declare c_address varchar(20);
+    declare n int;
+    declare c cursor for select address from house;
+    declare continue handler for not found set isDone = true;
+    set @str2 = mystr2;
+open c;
+fetch c into c_address;
+while !isDone do
+select count(*) into n from house where address = mystr1;
+    if n = 1 then
+       update house set address = @str2 where address = mystr1;
+       fetch c into c_address;
+    else
+       fetch c into c_address;
+    end if;
+end while;
+close c;
+RETURN @str2;
+end $$
+DELIMITER;
+--------------------------------------------------------------------------
+備份
+mysqldump -u root -B -R AddressBook  > abbackup.sql
+mysqldump -u root -B -R rent  > backup1.sql
+
+------------------------------------------------------
+S:SHARE S鎖
+X:EXCLUSIVE X鎖 獨佔鎖 排他鎖 只能有一個在修改資料
+S鎖與X鎖互斥 有例外:有些資料庫允許上了X鎖的狀態下可以讀
+
+is 意圖共享鎖
+ix 意圖獨佔鎖
+-------------------------------------------------------
+超賣
+
+DELIMITER $$
+
+create PROCEDURE buy(pid int)
+BEGIN
+    declare n int;
+    
+    SELECT amount into n from product where id = pid;
+    do sleep (20);
+    if n >0 THEN
+        update product set amount = amount -1 where id = pid;
+        SELECT amount FROM product WHERE id =pid;
+    ELSE
+        select '賣完了' as message;
+    end if;
+end $$
+delimiter
+
+//執行
+call buy(1) 分兩個視窗一起執行
+
+-----------------------------------------------------------------------
+防止超賣寫法
+
+DELIMITER $$
+
+create PROCEDURE buy(pid int)
+BEGIN
+    declare n int;
+    START TRANSACTION;
+        update product set amount = amount -1 where id = pid;
+        SELECT amount into n from product where id = pid;
+        do sleep (20);
+    if n >= 0 THEN
+        SELECT amount FROM product WHERE id =pid;
+        COMMIT;
+    ELSE
+        select '賣完了' as message;
+        rollback;
+    end if;
+end $$
+delimiter
+
+//執行
+call buy(1) 分兩個視窗一起執行
+先update上X鎖在搜尋，
+
+----------------------------------------------------------------------------
