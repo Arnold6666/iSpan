@@ -1,9 +1,11 @@
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>Place Details</title>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
   <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
   <style>
     #map {
       height: 80%;
@@ -29,7 +31,7 @@
       this.center = { lat: parseFloat(lat), lng: parseFloat(lng) };
     }
 
-    window.onload = function () {
+    function useFetch() {
       fetch("./backend.php")
         .then(function (response) {
           return response.json()
@@ -42,6 +44,46 @@
           // pinMarker(records);
           pinMarkerCluster(records)
         })
+    }
+
+    // 原生javascript舊版本AJAX功能寫法
+    function useXMLHttpRequest() {
+      alert("good");
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function () {
+        let jsonString = this.responseText;
+        let jsonObj = JSON.parse(jsonString);
+        let records = [];
+        jsonObj["records"].forEach(function (rd) {
+          records.push(new Location(rd.county, rd.sitename, rd.aqi, rd.latitude, rd.longitude));
+        });
+
+        pinMarkerCluster(records);
+      }
+      xhttp.open("GET", "./backend.php", true);
+      xhttp.send();
+    }
+
+    function usejQuery() {
+      $.ajax({
+        url: "./backend.php",
+        success: function (result) {
+          let jsonString = result;
+          let jsonObj = JSON.parse(jsonString);
+          let records = [];
+          jsonObj["records"].forEach(function (rd) {
+            records.push(new Location(rd.county, rd.sitename, rd.aqi, rd.latitude, rd.longitude));
+          });
+
+          pinMarkerCluster(records);
+        }
+      });
+    }
+
+    window.onload = function () {
+      // useFetch();
+      // useXMLHttpRequest();
+      usejQuery()
     }
 
     function pinMarker(records) {

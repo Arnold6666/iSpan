@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+</head>
+<style>
+  span#test{
+    display: block;
+    height: 100px;
+    width: 100px;
+  }
+
+  .pointer{
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  .small{
+    font-size: 18px;
+  }
+
+  .medium{
+    font-size: 24px;
+  }
+
+  .large{
+    font-size: 30px;
+  }
+</style>
+<script>
+  // $(function(){
+  //   $("button").click(function(){
+  //     $("div").html("Hello World!") //html 類似原生.innerhtml
+  //   }) 
+  // })
+
+  // 每個函式內都只有一行，可以簡寫為箭頭函式如下
+  $(() =>{
+    // 無法註冊兩個事件
+    // $(".bn1").click(() => {
+    //   $("span#test").html("Hello World!")
+    //   $("span#test").css("background-color","red")
+    // })
+
+    // on 為jQuery的事件監聽，同按鈕要註冊兩個事件時，使用事件監聽，
+    // $("#bn2").on("click", function() {
+    //   $("span#test").html("Hi!")
+    //   $("span#test").css("background-color","green")
+    // })
+
+    // $("#red").on("click", function(){
+    //   $("span#test").css("background-color","red")
+    // })
+
+    // $("#green").on("click", () => {
+    //   $("span#test").css("background-color","green")
+    // })
+
+    $("span#s").on("click", () =>
+      $("#content").css("font-size","18px"),
+    )
+
+    $("span#m").on("click", () =>
+      $("#content").css("font-size","24px"),
+    )
+
+    $("span#b").on("click", () =>
+      $("#content").css("font-size","30px"),
+    )
+
+    // $("#bn2").on("click", () => 
+    //   $("span#test").html("Hi!")
+    // )
+  })
+</script>
+</script>
+<body>
+  <!-- <button class="bn1">click1</button>
+  <button id="bn2">click2</button>
+  <button id="red">red</button>
+  <button id="green">green</button>
+  <span id="test"></span> -->
+  <hr>
+  <span id="s" style="font-size: 18px;" class="pointer">A</span>
+  <span id="m" style="font-size: 24px;" class="pointer">A</span>
+  <span id="b" style="font-size: 30px;" class="pointer">A</span>
+  <p id="content" style="font-size: 18px;">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum quod provident, illo, ratione rem aliquam veritatis maxime dolorum nesciunt, dolore ducimus! Repudiandae aspernatur ab a dolor. Possimus velit minima quaerat officia amet! Deleniti eaque cumque doloribus totam ut ullam vitae corporis magni molestiae quibusdam voluptate, ipsa minus optio harum facilis.
+  </p>
+  <br>
+  <hr>
+
+  <span id="ss" style="font-size: 18px;" class="pointer">A</span>
+  <span id="mm" style="font-size: 24px;" class="pointer">A</span>
+  <span id="bb" style="font-size: 30px;" class="pointer">A</span>
+  <p id="content2" style="font-size: 18px;">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum quod provident, illo, ratione rem aliquam veritatis maxime dolorum nesciunt, dolore ducimus! Repudiandae aspernatur ab a dolor. Possimus velit minima quaerat officia amet! Deleniti eaque cumque doloribus totam ut ullam vitae corporis magni molestiae quibusdam voluptate, ipsa minus optio harum facilis.
+  </p>
+
+  <hr>
+  <span id="ss" class="pointer small">A</span>
+  <span id="mm" class="pointer medium">A</span>
+  <span id="bb" class="pointer large">A</span>
+  <p id="content3" style="font-size: 18px;">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum quod provident, illo, ratione rem aliquam veritatis maxime dolorum nesciunt, dolore ducimus! Repudiandae aspernatur ab a dolor. Possimus velit minima quaerat officia amet! Deleniti eaque cumque doloribus totam ut ullam vitae corporis magni molestiae quibusdam voluptate, ipsa minus optio harum facilis.
+  </p>
+  <script>
+    window.onload = function(){
+      let ss = document.getElementById("ss");
+
+      // console.log(ss);
+      let mm = document.getElementById("mm");
+      let bb = document.getElementById("bb");
+      let content2 = document.getElementById("content2");
+
+      // console.log(content2)
+
+      // ss.addEventListener("click",function(){ 
+      //   // content2.setAttribute('style','font-size: 18px'); 
+      //   document.getElementById("content2").style.fontSize = "18px";
+      // })
+      // mm.addEventListener("click",function(){
+      //   // content2.setAttribute('style','font-size: 24px'); 
+      //   document.getElementById("content2").style.fontSize = "24px";
+      // })
+      // bb.addEventListener("click",function(){
+      //   // content2.setAttribute('style','font-size: 30px');
+      //   document.getElementById("content2").style.fontSize = "30px";
+      // })
+
+      ss.onclick = function(){
+        console.log("ss")
+        document.getElementById("content2").style.fontSize = "18px";
+      }
+      mm.onclick = function(){
+        document.getElementById("content2").style.fontSize = "24px";
+      }
+      bb.onclick = function(){
+        document.getElementById("content2").style.fontSize = "30px";
+      }
+
+    }
+
+    // 老師jQuery
+    // $(function(){
+    //   $("span.pointer").click(function(){
+    //     let size = $(this).css("font-size")
+    //     $("#content3").css("font-size", size)
+    //   })
+    // })
+
+    // 老師原生javascript
+    // window.onload = function(){
+    //   for(span of document.getElementsByTagName("span")){
+    //     let size = getComputedStyle(span).fontSize
+    //     span.onclick = function(){
+    //       for (p of document.getElementsByTagName("p")){
+    //         p.style.fontSize = size;
+    //       }
+    //     }
+    //   }
+    // }
+  </script>
+</body>
+</html>

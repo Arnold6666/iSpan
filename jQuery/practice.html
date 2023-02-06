@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+</head>
+
+<body>
+  <!-- <form action="001.php">
+    <input id="num1" type="text" placeholder="請輸入數字" name="a"> <br>
+    <input id="num2" type="text" placeholder="請輸入數字" name="b"> <br>
+    <button type="submit">add</button>
+  </form> -->
+
+
+  <input id="num1" type="text" placeholder="請輸入數字"> <br>
+  <input id="num2" type="text" placeholder="請輸入數字"> <br>
+  <!-- <button type="submit" onclick="addtwonumber()">add</button> -->
+  <button>add</button>
+
+  <div id="container">結果：
+    <span id="running">運算中</span>
+    <span id="result"></span>
+  </div>
+
+  <script>
+    // function addtwonumber() {
+    //   let a = document.getElementById("num1").value;
+    //   let b = document.getElementById("num2").value;
+    //   let result = document.getElementById("result");
+
+    //   $.ajax({
+    //     url: `./001.php?a=${a}&b=${b}`,
+    //     success: function (sum) {
+    //       $("#result").html(sum);
+    //       result.value = sum;
+    //       console.log(sum);
+    //     }
+    //   })
+    // }
+
+    $(function () {
+      $("#running").hide();
+      $("#result").hide();
+
+      $("button").click(function () {
+        $("#running").show();
+        $("#result").hide();
+
+        // $("#container").hide();
+        // $("#result").html("運算中");
+
+        let a = $("#num1").val();
+        let b = $("#num2").val();
+
+        $.get(`./001.php?a=${a}&b=${b}`, function (sum) {
+          $("#result").html(sum);
+          // $("#container").show()
+          // $("#result").html(sum);
+        }).done(function () {
+          $("#running").hide();
+          $("#result").show();
+        })
+
+        // $.ajax({
+        //   url: `./001.php?a=${a}&b=${b}`,
+        //   success: function (sum) {
+
+        //     $("#result").html(sum);
+        //     // $("#container").show()
+        //     // $("#result").html(sum);
+        //   }
+        // }).done(function () {
+        //   $("#running").hide();
+        //   $("#result").show();
+        // })
+      })
+    })
+  </script>
+</body>
+
+</html>

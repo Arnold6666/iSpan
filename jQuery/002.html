@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+</head>
+<body>
+  <script>
+    $(()=>{
+      let colors = ["red","orange","yellow","green","blue","indigo","purple"]
+      $("div").each((index,item)=>{
+        $(item).css("background-color",colors[index])
+      })
+
+      let value = 0
+      // 無錯，但無法執行
+      // $(()=>{
+      //   $("#bn").on("click", ()=>{
+      //     value += 1
+      //     $(this).html(value) 
+      //   })
+      // })
+      
+      // 方法一，箭頭函示改為function
+      $(()=>{
+        $("#bn").on("click", function(){
+          value += 1
+          $(this).html(value) 
+        })
+      })
+      
+      // 方法二，this改為event.currentTarget
+      // $(()=>{
+      //   $("#bn").on("click", () => {
+      //     value += 1
+      //     $(event.currentTarget).html(value) 
+      //   })
+      // })
+    })
+    $(function(){
+      $("#show").click(function(){
+        $("#test").show(1000)
+      })
+      $("#hide").click(function(){
+        $("#test").hide(1000)
+      })
+    })
+  </script>
+  <div>Red</div>
+  <div>Orange</div>
+  <div>Yellow</div>
+  <div>Green</div>
+  <div>blue</div>
+  <div>Indigo</div>
+  <div>purple</div>
+  <hr>
+  <button id="hide">hide</button>
+  <button id="show">show</button>
+  <div id="test">Hello World!</div>
+  <hr>
+  <button id="bn">change</button>
+</body>
+</html>
