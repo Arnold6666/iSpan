@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <title>Document</title>
+  <script>
+    $(function () {
+      $("#dialog").dialog({
+        autoOpen: false,
+        modal: false,
+        buttons: {
+          "Custom": function () {
+            $(this).dialog("close")
+          },
+          Ok: function () {
+            let msg = $("#msg").val()
+            alert(msg)
+            $(this).dialog("close")
+          },
+          Cancel: function () {
+            $(this).dialog("close")
+          }
+        }
+      })
+
+      $('#bn').click(function () {
+        $("#dialog").dialog("open")
+      })
+    })
+
+    $(() => {
+      $("#menu").menu({
+        select:function(event,ui){
+          alert($(event.currentTarget).attr("id"))
+          alert($(event.currentTarget).children("div").html())
+        }
+      })
+    })
+  </script>
+  <style>
+    .ui-menu {
+      width: 150px;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="bn">open dialog</button>
+  <div id="dialog" title="Test">
+    <input id="msg">
+  </div>
+  <hr>
+
+  <ul id="menu">
+    <li id="shoppingcart">
+      <div><i class='bx bx-cart'></i>購物車</div>
+    </li>
+    <li id="order">
+      <div style="padding-left: 16px;">訂單</div>
+      <ul>
+        <li id="histroyOrder">
+          <div >歷史訂單</div>
+        </li>
+        <li id="cancelHistory">
+          <div class="ui-state-disabled">取消紀錄</div>
+        </li>
+      </ul>
+    </li>
+    <li id="personal" >
+      <div style="padding-left: 16px;">個人資料</i></div>
+    </li>
+  </ul>
+</body>
+
+</html>

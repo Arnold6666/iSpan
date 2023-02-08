@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+    crossorigin="anonymous"></script>
+</head>
+<script>
+  // $(function () {
+  //   let deg = 0
+  //   let opac = 1
+  //   if (opac == 1) {
+  //     opac = 0
+  //   } else if (opac == 0) {
+  //     opac = 1
+  //   }
+
+  //   $("button").click(function () {
+  //     opac == 1 ? opac = 0 : opac = 1;
+
+  //     $("p").animate({
+  //       top: "+=100",
+  //       opacity: `${opac}`,
+  //     }, "slow")
+  //   })
+  // })
+
+  $(function(){
+    let deg = 0
+    $("button").click(function(){
+      $("p").animate({
+        cvb: "+=100",
+      },{
+        duration:"slow",
+        step: function(now,fx){
+          $("p"). css("transform",`rotate(${deg}deg)`)
+          deg += 4.7
+        }
+      })
+    })
+  })
+
+</script>
+
+<body>
+  <button>Click</button>
+  <p style="position: relative; text-align: center; font-size: 50px; letter-spacing: 10px;">Hello</p>
+</body>
+
+</html>

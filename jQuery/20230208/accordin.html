@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <title>Document</title>
+  <script>
+    // $(()=>
+    //   $("#accordion").accordion(
+    //     {active:1},{heightStyle: "auto"})
+    // )
+
+    $(() =>
+      $("#accordion").accordion({
+        create: function (event, ui) {
+          $(".ui-state-active").css({
+            "border": "1px solid #0e4b05",
+            "background": "green"
+          })
+        },
+        beforeActivate: function (event, ui) {
+          ui.oldHeader.css({
+            "border": "1px solid #c5c5c5",
+            "background": "#f6f6f6"
+          })
+          ui.newHeader.css({
+            "border": "1px solid #0e4b05",
+            "background": "green"
+          })
+        }
+      },{heightStyle: "content"})
+    )
+
+  </script>
+</head>
+
+<body>
+  <div id="accordion">
+    <h1>Section 0</h1>
+    <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure consequuntur ad numquam veritatis incidunt a
+      deleniti harum odit accusamus velit beatae eos vero nisi alias saepe libero, non laborum? Quasi dicta illo omnis
+      suscipit optio officiis excepturi, debitis provident consequuntur fuga iure aut voluptatibus minima quis nam
+      exercitationem dolorum asperiores! Maxime nostrum, eligendi magni dolore, rem qui expedita architecto corporis
+      amet enim illum accusantium perferendis. Perferendis quo, dolorem possimus deserunt mollitia magnam saepe
+      voluptatem atque nesciunt natus, ut explicabo numquam sit dolorum minus neque! Doloribus odit, aliquam corporis
+      quaerat eum esse dolorum assumenda ex quia excepturi quidem quam rem. Autem.</div>
+    <h1>Section 1</h1>
+    <div>Hello!!!</div>
+  </div>
+</body>
+
+</html>

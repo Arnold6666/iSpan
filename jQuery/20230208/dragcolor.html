@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <title>Document</title>
+  <script>
+    $(function () {
+      // $("#lightgreen").draggable({
+      //   $("#drag").animate({
+      //     asdf: "100"
+      //   },{
+      //     duration: "slow",
+      //     step: function(now, fx){
+            
+      //     }
+      //   })
+      // })
+
+      $("#lightgreen").draggable()
+      $("#lightblue").draggable()
+      $("#gray").draggable()
+      $("#red").draggable()
+      $("#pink").draggable()
+      
+      // $("#drag").droppable({
+      //   drop: function (event, ui) {
+      //     // alert($(ui.draggable).html())
+      //     $("#drag").css("background-color",$(ui.draggable).html())
+      //     console.log(ui)
+      //   }
+      // })
+
+      $("#drag").droppable({
+        drop: function (event, ui) {
+          // alert($(ui.draggable).html())
+          $("#drag").css("background-color",$(ui.draggable).css("background-color"))
+          console.log(ui)
+        }
+      })
+    })
+
+
+  </script>
+</head>
+
+<body>
+  <div style="display: flex; ">
+    <div id="lightgreen" style="width: 50pt; height: 50pt; background-color: lightgreen;"></div>
+    <div id="lightblue" style="width: 50pt; height: 50pt; background-color: lightblue;"></div>
+    <div id="gray" style="width: 50pt; height: 50pt; background-color: gray;"></div>
+    <div id="red" style="width: 50pt; height: 50pt; background-color: red;"></div>
+    <div id="pink" style="width: 50pt; height: 50pt; background-color: pink;"></div>
+  </div>
+
+  <hr>
+  <div id="drag" style="width: 100pt; height: 100pt; background-color: brown; color: rgba(0, 0, 0, 0);">brown</div>
+</body>
+
+</html>

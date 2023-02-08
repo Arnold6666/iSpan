@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <title>Document</title>
+  <style>
+    div[id^=progressbar] {
+      position: relative;
+      width: 200pt;
+      background-color: bisque;
+    }
+
+    .label {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .ui-slider-handle{
+      width: 20px;
+    }
+  </style>
+  <script>
+
+    $(() => {
+      let value = 30
+      $(".label").text(`${value}%`)
+      $("#bar").progressbar({
+        max: 100
+      });
+      $("#bar").progressbar("value", value);
+      $("#bar").find(".ui-progressbar-value").css({ "background-color": "lightblue" })
+
+      let label = $("#label")
+      $("#slider").slider({
+        max:100,
+        min:0,
+        value:30,
+        step:10,
+        create: function () {
+          label.text($(this).slider("value"))
+        },
+        slide: function (event, ui) {
+          label.text(ui.value)
+        },
+      })
+    })
+  </script>
+
+
+</head>
+
+<body>
+  <div id="progressbar">
+    <div class="label"></div>
+    <div id="bar"></div>
+  </div>
+  <br><br><br>
+  <div id="slider">
+    <div id="label" class="ui-slider-handle"></div>
+  </div>
+</body>
+
+</html>
