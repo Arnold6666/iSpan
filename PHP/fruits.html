@@ -13,12 +13,12 @@
 
 <body>
   <!-- get能傳輸的資料量有所限制 -->
-  <form action="cal.php" method="post">
-    Number1: <input name="a"><br>
-    <br>
-    Number2: <input name="b"><br>
-    <br>
-    <input type="button" onclick="loadDoc()" value="送出">
+  <form action="data.php" method="post">
+    <label for="banana">香蕉</label>  <input type="checkbox" name="fruits[]" id="banana" value="香蕉"><br>
+    <label for="your">你個</label>    <input type="checkbox" name="fruits[]" id="your" value="你個"><br>
+    <label for="guava">芭樂</label>   <input type="checkbox" name="fruits[]" id="guava" value="芭樂"><br>
+    
+    <input type="submit">
   </form>
   <div id="demo">
 
