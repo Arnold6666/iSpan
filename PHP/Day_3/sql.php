@@ -1,11 +1,13 @@
 <?php
 // A01';delete from userinfo where uid = 'A04'; --
+// A01' union all select * from userinfo; --
 require "db.php";
 
-$uid = $_GET["uid"];
+$uid = $_REQUEST["uid"];
+$pwd = $_REQUEST["pwd"];
 
-$sql = "select * from userinfo WHERE uid = '{$uid}'";
-// $sql = "select * from userinfo WHERE uid = ?";
+$sql = "select * from userinfo WHERE uid = '{$uid}' and pwd = '{$pwd}' ";
+// $sql = "select * from userinfo WHERE uid = ? and pwd = ?";
 // $stmt = $mysqli->prepare($sql);
 // $stmt->bind_param("s",$uid); //s表示為string
 // $stmt->execute();
@@ -13,12 +15,13 @@ $sql = "select * from userinfo WHERE uid = '{$uid}'";
 
 // 透過物件導向方法query送出sql指令
 // query一次只能執行一條sql command(一般來說)
-// $result = $mysqli->query($sql);
+$result = $mysqli->query($sql);
 // print_r($result);
 // var_dump($result);
 
-$result = $mysqli->multi_query($sql);
-die('done');
+// 測試sql injection用
+// $result = $mysqli->multi_query($sql);
+// die('done');
 
 // print_r($row["cname"]);
 // echo "<br>\n";
@@ -72,5 +75,6 @@ die('done');
 </body>
 
 </html>
+
 
 
