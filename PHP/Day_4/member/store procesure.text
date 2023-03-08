@@ -1,0 +1,27 @@
+DELIMITER $$
+create PROCEDURE login(myuid varchar(20), mypwd varchar(100))
+begin
+    declare isLogin int default 0;
+    declare uuid char(36) default uuid();
+    
+	select count(*) into isLogin from UserInfo where uid = myuid and pwd = mypwd;
+    if isLogin = 1 then
+    	update UserInfo set token = uuid where uid = myuid;
+    	select (select uuid) as token;
+    else 
+    	select null as token;
+    end if;
+END $$
+
+DELIMITER ;
+
+
+DELIMITER $$
+create PROCEDURE logout(uuid char(36))
+begin
+	update UserInfo set token = null where token = uuid;
+END $$
+
+DELIMITER ;
+
+

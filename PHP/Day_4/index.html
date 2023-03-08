@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+    integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+  <h3>get</h3>
+  <form action="index.php" method="get">
+    <input type="text" name="uid"><input type="submit" value="查詢">
+  </form>
+  <hr>
+  <h3>post</h3>
+  <form action="index.php" method="post">
+    帳號 <input type="text" name="uid"><br>
+    密碼 <input type="text" name="pwd"><br>
+    <input type="submit" value="新增資料">
+  </form>
+  <hr>
+  <h3>edit</h3>
+  修改對象 <input type="text" id="tar" name="uid"><br>
+  原始密碼 <input type="text" id="old" name="opwd"><br>
+  新的密碼 <input type="text" id="new" name="npwd"><br>
+  <button id="edit" onclick="edit()">修改密碼</button>
+  
+  <hr>
+  <h3>delete</h3>
+  刪除對象 <input type="text" id="deltar" name="uid"><br>
+  <button onclick="deletedata()">刪除</button>
+  <script>
+    let uid = document.getElementById("tar").value;
+    function edit() {
+      let uid = document.getElementById("tar").value;
+      let opwd = document.getElementById("old").value;
+      let npwd = document.getElementById("new").value;
+      
+      let mydata = {
+        "uid": uid,
+        "opwd": opwd,
+        "npwd": npwd
+      }
+
+      $.ajax({
+        type: "PUT",
+        url: "index.php",
+        data: mydata,
+        success: function (response) {
+          console.log(response);
+        }
+      });
+    }
+
+    function deletedata() {
+      let uid = document.getElementById("deltar").value;
+      
+      let mydata = {
+        "uid": uid
+      }
+
+      $.ajax({
+        type: "DELETE",
+        url: "index.php",
+        data: mydata,
+        success: function (response) {
+          console.log(response);
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>
