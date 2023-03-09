@@ -15,13 +15,13 @@ switch ($method) {
     $uid = $_REQUEST["uid"];
     $pwd = $_REQUEST["pwd"];
     $sha = $sha = hash('sha256', $pwd);
-    $sql = "SELECT * FROM userinfo WHERE uid = ? AND pwd = ?";
+    $sql = "call login2(?, ?)";
     $stmt = $mysqli->prepare($sql);
     $stmt->bind_param("ss", $uid, $sha); //s表示為string
     $stmt->execute();
     $result = $stmt->get_result();
     if ($row = $result->fetch_assoc()) {
-      $_SESSION['uid'] = $row['uid'];
+      $_SESSION['token'] = $row['token'];
       echo "登入成功";
       echo '<a href="profile.php">查看個人資料</a>';
     }else{
